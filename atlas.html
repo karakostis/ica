@@ -2,13 +2,17 @@
 <html>
 <head>
     <title>HTA Map</title>
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="img/favicon.ico">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/ol/ol.css" type="text/css">
     <link rel="stylesheet" href="css/ol/ol3-sidebar.css" />
-    <link href="https://cdn.jsdelivr.net/npm/ol-geocoder@latest/dist/ol-geocoder.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/ol/ol-geocoder.css" />
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
             padding: 0;
@@ -69,6 +73,23 @@
         content: "x";
       }
 
+      .customExtentZoomClass {
+          /* Copied from ol-zoom-extent */
+          top: 4.643em;
+          left: .48em;
+          width: 2.1875em;
+           height: 2.1875em;
+      }
+      .customExtentZoomClass button {
+        width: 1.5625em;
+        height: 1.5625em;
+        background: url(img/full_extent_2.png);
+        background-size: 17px;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-color: rgba(0, 60, 136, 0.5);;
+      }
+
     </style>
 </head>
 <body>
@@ -113,7 +134,7 @@
 
             <div class="sidebar-pane" id="messages">
                 <h1 class="sidebar-header">Contact<span class="sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
-
+<!--  -->
                 <p class="lorem">Humanitarian Topographic Atlas (HTA) is a project developed by the Emergency Preparedness Branch of the UN World Food Programme, for supporting field operations during humanitarian crisis. The primary goal of HTA is to create a high-quality, detailed, highly readable, up-to-date and aesthetically pleasing topographic maps covering the areas with WFP field operations.</p>
             </div>
             <!--
@@ -126,7 +147,38 @@
 
     <div id="map" class="sidebar-map"></div>
 
-    <!--test popup   -->
+    <!-- The Modal -->
+    <div class="modal fade" id="introduction" style=" opacity:0.7; color:white;">
+      <div class="modal-dialog">
+        <div class="modal-content" style="background-color: black">
+
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title">Humanitarian Topographic Atlas (HTA)</h4>
+            <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+          </div>
+
+          <!-- Modal body -->
+          <div class="modal-body">
+            Welcome to Humanitarian Topographic Atlas. Select the country of your interest to zoom in and download the latest topographic maps. Alternatively use the Search functionality to find locations of interest. In case your area of interest is not listed, let us know by fiiling in this following <a href="https://docs.google.com/forms/d/e/1FAIpQLSfsWXRa-0ltg_ziOTRtv96LP7BXjXIll_emEvXgUSFzvYFOtA/viewform?c=0&w=1&usp=embed_googleplus" target="_blank"> form </a>.
+          </div>
+
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <label class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="modal_checkbox">
+              <span class="custom-control-indicator"></span>
+              <span class="custom-control-description">Do not show me this again.</span>
+            </label>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" id="close_btn">Close</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+    <!-- popup   -->
     <div id="popup" class="ol-popup" style="display:none;">
       <a href="#" id="popup-closer" class="ol-popup-closer"></a>
       <div id="popup-content"></div>
@@ -136,6 +188,7 @@
     <script src="js/ol/ol3-sidebar.js"></script>
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="/js/ol/ol-geocoder-debug.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/ol-geocoder"></script> -->
     <script>
 
@@ -215,7 +268,10 @@
       var sidebar = new ol.control.Sidebar({ element: 'sidebar', position: 'left' });
       var overviewmap = new ol.control.OverviewMap({ collapsed: false });
       var zoomtoextent = new ol.control.ZoomToExtent({
-        extent: [-15873028.798542442, -2495795.198366443, 17431501.66964827, 7327280.180618128]
+        label:'',
+        className: 'customExtentZoomClass',
+        extent: [-15873028.798542442, -2495795.198366443, 17431501.66964827, 7327280.180618128],
+
       });
       map.addControl(sidebar);
       map.addControl(overviewmap);
@@ -295,44 +351,64 @@
       }
 
     /*
-      var icon = new ol.style.Icon({
-          src: 'hta.png'
- });
+   var style = new ol.style.Style({
+       image: icon,
+    });
+    */
+    var geocoder = new Geocoder('nominatim', {
+      provider: 'osm',
+      autoComplete: 'true',
+      //featureType: 'country',
+      autoCompleteMinLength: '3',
+      countrycodes: 'ht,lk,do,sy',
+      lang: 'en-US', //en-US, fr-FR
+      placeholder: 'Search for ...',
+      targetType: 'glass-button',
+      limit: 3,
+      keepOpen: false,
+      //featureStyle: style
+    });
 
- var style = new ol.style.Style({
-     image: icon,
-   });
-   */
-      var geocoder = new Geocoder('nominatim', {
-  provider: 'osm',
-  autoComplete: 'true',
-  //featureType: 'country',
-  autoCompleteMinLength: '3',
-  //countrycodes: 'ht,lk,do,sy',
-  lang: 'en-US', //en-US, fr-FR
-  placeholder: 'Search for ...',
-  targetType: 'text-input',
-  limit: 3,
-  keepOpen: false,
-  //featureStyle: style
+    map.addControl(geocoder);
 
-});
-map.addControl(geocoder);
+    geocoder.on('addresschosen', function(evt){
+      var feature = evt.feature,
+          coord = evt.coordinate,
+          address = evt.address;
+      map.getView().setZoom(6);
+      map.getView().setCenter(coord);
 
-geocoder.on('addresschosen', function(evt){
+      // some popup solution
+      //content.innerHTML = '<p>'+ address.formatted +'</p>';
+      //overlay.setPosition(coord);
+    });
 
-  var feature = evt.feature,
-      coord = evt.coordinate,
-      address = evt.address;
-  map.getView().setZoom(6);
-  map.getView().setCenter(coord);
+    // modal
+      $(window).load(function() {
+        var showmodal = localStorage.getItem("checked_modal");
+        if (showmodal !== "checked"){
+          $('#introduction').modal('show');
+        }
+      });
 
-  // some popup solution
-  //content.innerHTML = '<p>'+ address.formatted +'</p>';
-  //overlay.setPosition(coord);
-});
 
-    </script>
-    <script src="js/ol_custom/highlight_vector.js"></script>
+
+      $(function() {
+        $(".custom-control-input").change(function() {
+          $(".custom-control-input").toggleClass("checked", this.checked)
+        }).change();
+
+        $( "#close_btn" ).on( "click", function() {
+          var checkbox_val = $("#modal_checkbox").hasClass("checked");
+          if (checkbox_val){
+            localStorage.setItem("checked_modal", "checked");
+          }
+        });
+      });
+
+
+
+  </script>
+  <script src="js/ol_custom/highlight_vector.js"></script>
 </body>
 </html>

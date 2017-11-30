@@ -19,7 +19,6 @@ text: new ol.style.Text({
 })
 });
 
-
 var featureOverlay = new ol.layer.Vector({
 source: new ol.source.Vector(),
 map: map,

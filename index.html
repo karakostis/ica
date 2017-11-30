@@ -10,7 +10,8 @@
 
 
     <title>Humanitarian Topographic Atlas</title>
-
+    <!-- Favicons-->
+    <link rel="shortcut icon" href="img/favicon.ico">
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -37,10 +38,13 @@
 
   <body id="page-top">
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <!-- Navigation <nav class="navbar navbar-inverse navbar-expand-lg navbar-dark navbar-fixed-top" id="mainNav" role="navigation" style="height:80px;-->
+    <nav class="navbar navbar-inverse navbar-expand-lg navbar-dark fixed-top" id="mainNav" role="navigation" style="height:80px; background-color:#2a93fc">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">Human Topographic Atlas</a>
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#" style="background-image:url('/img/wfp_logo_72_white.png'); background-position-x: 15px; height: 65px; background-repeat: no-repeat;  color:white; margin-top:5px; font-size:32px; padding-left: 85px; font-family: Helvetica Neue,Helvetica,Arial,sans-serif;"><strong>WFP </strong> HTA</a>
+        </div>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fa fa-bars"></i>
@@ -62,12 +66,12 @@
     </nav>
 
     <!-- Header -->
-    <header class="masthead">
+    <header class="masthead" style="margin-top:81px">
       <div class="container">
         <div class="intro-text">
           <!-- <div class="intro-lead-in"> test </div> -->
           <div class="intro-heading text-uppercase">Humanitarian Topographic Atlas</div>
-          <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="atlas.html" target="_blank">Access the Atlas</a>
+          <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="atlas.html" target="_blank" style="border-color:#fed136;">Access the Atlas</a>
         </div>
       </div>
     </header>
@@ -90,8 +94,9 @@ The primary goal of HTA is to create a high-quality, detailed, highly readable, 
           </div>
           <div class="col-md-4">
             <span>
-              <img class="rounded img-fluid" src="img/topo_map.jpg" alt="topographic_map" style="border: 1px solid grey; width:280px; height:auto;">
+              <img class="rounded img-fluid" src="img/topo_map.jpg" alt="topographic_map" style="border: 1px solid grey; width:280px; height:auto; margin-bottom: 1rem;">
             </span>
+            <a class="btn btn-primary btn-l text-uppercase js-scroll-trigger" href="http://gis.wfp.org/topo/HTA_HTI_011A_100k.pdf" target="_blank" style="border-color:#fed136;">Get example</a>
           </div>
         </div>
         </br></br>
@@ -163,10 +168,12 @@ Please <a href="https://docs.google.com/forms/d/e/1FAIpQLSfsWXRa-0ltg_ziOTRtv96L
     <footer>
       <div class="container">
         <div class="row">
+          <!--
           <div class="col-md-4">
             <span class="copyright">Copyright &copy; 2017</span>
           </div>
           <div class="col-md-4">
+            <!--
             <ul class="list-inline social-buttons">
               <li class="list-inline-item">
                 <a href="#">
@@ -184,7 +191,7 @@ Please <a href="https://docs.google.com/forms/d/e/1FAIpQLSfsWXRa-0ltg_ziOTRtv96L
                 </a>
               </li>
             </ul>
-          </div>
+          </div>-->
         </div>
       </div>
     </footer>
