@@ -359,12 +359,12 @@
       provider: 'osm',
       autoComplete: 'true',
       //featureType: 'country',
-      autoCompleteMinLength: '3',
-      countrycodes: 'ht,lk,do,sy',
+      autoCompleteMinLength: '2',
+      //countrycodes: 'ht,lk,do,sy,td',
       lang: 'en-US', //en-US, fr-FR
       placeholder: 'Search for ...',
       targetType: 'glass-button',
-      limit: 3,
+      limit: 13,
       keepOpen: false,
       //featureStyle: style
     });
@@ -391,8 +391,6 @@
         }
       });
 
-
-
       $(function() {
         $(".custom-control-input").change(function() {
           $(".custom-control-input").toggleClass("checked", this.checked)
@@ -405,8 +403,6 @@
           }
         });
       });
-
-
 
   </script>
   <script src="js/ol_custom/highlight_vector.js"></script>

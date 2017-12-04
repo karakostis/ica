@@ -1,7 +1,7 @@
 
 var highlightStyle = new ol.style.Style({
 stroke: new ol.style.Stroke({
-  color: '#ff794d',
+  color: 'rgba(255,0,0,0.1)',
   width: 1
 }),
 fill: new ol.style.Fill({
@@ -36,21 +36,21 @@ var feature = map.forEachFeatureAtPixel(pixel, function(feature) {
 });
 
 if (feature !== highlight) {
-  if (highlight) {
-    featureOverlay.getSource().removeFeature(highlight);
-  }
-  if (feature) {
-    featureOverlay.getSource().addFeature(feature);
-  }
-  highlight = feature;
+    if (highlight) {
+        featureOverlay.getSource().removeFeature(highlight);
+    }
+    if (feature) {
+        featureOverlay.getSource().addFeature(feature);
+    }
+    highlight = feature;
 }
 
 };
 
 map.on('pointermove', function(evt) {
-if (evt.dragging) {
-  return;
-}
-var pixel = map.getEventPixel(evt.originalEvent);
-displayFeatureInfo(pixel);
+    if (evt.dragging) {
+      return;
+    }
+    var pixel = map.getEventPixel(evt.originalEvent);
+    displayFeatureInfo(pixel);
 });
