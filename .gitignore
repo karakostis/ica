@@ -4,3 +4,5 @@ package.json
 package-lock.json
 scss
 gulpfile.js
+hta.html
+countries_globe.js

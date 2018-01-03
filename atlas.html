@@ -83,7 +83,7 @@
       .customExtentZoomClass button {
         width: 1.5625em;
         height: 1.5625em;
-        background: url(img/full_extent_2.png);
+        background: url(img/white_globe_icon.png);
         background-size: 17px;
         background-repeat: no-repeat;
         background-position: center center;
@@ -223,7 +223,7 @@
       var vectorLayer = new ol.layer.Vector({
           source: new ol.source.Vector({
             format: new ol.format.GeoJSON(),
-            url: 'http://vagrant-test.local.com/json/countries.js'
+            url: 'http://vagrant-test.local.com/json/countries_selected.js'
           }),
           style: function(feature) {
             //style.getText().setText(feature.get('ADM0'));
@@ -234,11 +234,13 @@
       var grid_layer = new ol.layer.Tile({
         //extent: [-13884991, 2870341, -7455066, 6338219],
         source: new ol.source.TileWMS({
-          url: 'https://geonode.wfp.org/geoserver/wms',
-          params: {'LAYERS': 'geonode:view_wld_grid_100ka1_wfp', 'CQL_FILTER': filterstring, 'TILED': true },
-          serverType: 'geoserver'
+          url: 'http://ogcserver.gis.wfp.org/geoserver/wms',
+          params: {'LAYERS': 'geonode:view_wld_grid_100ka1_wfp', 'FORMAT': 'image/png8', 'TRANSPARENT': true, 'CQL_FILTER': filterstring, 'TILED': true },
+          serverType: 'geoserver',
+          transition: 0
         }),
-        visible: false
+        visible: false,
+        //preload: 1
       })
 
       grid_layer.set('name', 'grid_layer');
@@ -270,8 +272,7 @@
       var zoomtoextent = new ol.control.ZoomToExtent({
         label:'',
         className: 'customExtentZoomClass',
-        extent: [-15873028.798542442, -2495795.198366443, 17431501.66964827, 7327280.180618128],
-
+        extent: [-14669604.225220628, -1683728.209864731, 16228077.09632646, 6515213.192116415],
       });
       map.addControl(sidebar);
       map.addControl(overviewmap);
@@ -308,21 +309,26 @@
           var geometry = feature.getGeometry();
           var extent = geometry.getExtent();
           view.fit(extent);
+          map.getView().setZoom(7);
           current_zoom = map.getView().getZoom();
           if (current_zoom >=5){
             getPopup();
-            setTimeout(function() {
-                grid_layer.setVisible(true);
-            }, 1000);
+            //setTimeout(function() {
+            //    grid_layer.setVisible(true);
+            //}, 1000);
             vectorLayer.setVisible(false);
           }
         }
       });
 
       map.on('moveend', (function() {
+        //map_extent = map.getView().calculateExtent(map.getSize())
         var current_zoom = map.getView().getZoom();
         if (current_zoom >=6){
-          grid_layer.setVisible(true);
+
+          setTimeout(function() {
+              grid_layer.setVisible(true);
+          }, 200);
           vectorLayer.setVisible(false);
           getPopup();
         } else {

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+    <title>Integrated Context Analysis</title>
+    <!-- Favicons-->
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <!-- Bootstrap core CSS -->
+
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+
+    <style>
+
+    section {
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    .tab-content {
+      border-bottom: 1px solid #ddd;
+      border-left: 1px solid #ddd;
+      border-right: 1px solid #ddd;
+    }
+
+    .nav-pills {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+
+    </style>
+
+  </head>
+
+  <body id="page-top">
+
+    <!-- Navigation <nav class="navbar navbar-inverse navbar-expand-lg navbar-dark navbar-fixed-top" id="mainNav" role="navigation" style="height:80px;-->
+    <nav class="navbar navbar-inverse navbar-expand-lg navbar-dark fixed-top" id="mainNav" role="navigation" style="height:80px; background-color:#2a93fc">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#" style="background-image:url('/img/wfp_logo_72_white.png'); background-position-x: 15px; height: 65px; background-repeat: no-repeat;  color:white; margin-top:5px; font-size:32px; padding-left: 85px; font-family: Helvetica Neue,Helvetica,Arial,sans-serif;"><strong>WFP </strong> ICA</a>
+        </div>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav text-uppercase ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="http://ica.local.com/">HOME</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+
+    <!-- Project -->
+    <section id="services" style="margin-top:81px">
+      <div class="container">
+        <!--
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="page-header section-heading">Integrated Context Analysis</h2>
+            <hr>
+            <h3 class="section-subheading text-muted">Natural Shocks Risk, Drought Risk, Livelihood Zones, Land Degradation</h3>
+          </div>
+        </div>
+        -->
+
+        <div class="row" style="float:right;">
+          <div class="dropdown">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" style="float:right; margin-right:15px;">
+              ICA Year
+            </button>
+            <div class="dropdown-menu year"></div>
+          </div>
+        </div>
+        </br></br>
+
+        <!-- Nav pills -->
+        <ul class="nav nav-pills" role="tablist">
+          <li class="nav-item">
+            <a class="nav-table nav-link active" data-toggle="pill" href="#layers_tab">Layers</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-table nav-link" data-toggle="pill" href="#static_tab">Static Maps</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-table nav-link" data-toggle="pill" href="#documents_tab">Documents</a>
+          </li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content" >
+          <div id="layers_tab" class="container tab-pane active"><br>
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Title</th>
+                  <th>Format</th>
+                  <th>Download</th>
+                </tr>
+              </thead>
+              <tbody id="data">
+              </tbody>
+            </table>
+          </div>
+          <div id="static_tab" class="container tab-pane fade"><br>
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Title</th>
+                  <th>Format</th>
+                  <th>Download</th>
+                </tr>
+              </thead>
+              <tbody id="static_map">
+              </tbody>
+            </table>
+          </div>
+          <div id="documents_tab" class="container tab-pane fade"><br>
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Title</th>
+                  <th>Format</th>
+                  <th>Download</th>
+                </tr>
+              </thead>
+              <tbody id="documents">
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <!--
+          <div class="col-md-4">
+            <span class="copyright">Copyright &copy; 2017</span>
+          </div>
+          <div class="col-md-4">
+            <!--
+            <ul class="list-inline social-buttons">
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="fa fa-twitter"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="fa fa-facebook"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="fa fa-linkedin"></i>
+                </a>
+              </li>
+            </ul>
+          </div>-->
+        </div>
+      </div>
+    </footer>
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+
+    <script>
+
+        // on page load populate the dropdown menu with years
+        var number_of_years = 3;
+        var currentTime = new Date();
+        var current_year = currentTime.getFullYear();
+        for (i = 0; i < number_of_years; i++) {
+          var id = current_year - i;
+          $(".year").append('<a class="dropdown-item" href="#" id="'+ id +'">'+ id + '</a>');
+        }
+
+
+        display_data();
+
+        // function to create the table with the data based on year
+        function display_data() {
+          //alert("entered")
+          $("#data").empty();
+          $("#static_map").empty();
+          $("#documents").empty();
+
+          var ica_data_layer = sessionStorage.getItem("response_layer");
+          var ica_data_layer_json = JSON.parse(ica_data_layer);
+          var layers_table = [];
+          for (var i = 0; i < ica_data_layer_json["objects"].length; i++) {
+            var workspace_layer_name = ica_data_layer_json["objects"][i]['detail_url'].split("/");
+            var layer_name = workspace_layer_name[workspace_layer_name.length - 1];
+            layers_table.push("<tr><td><a href=https://geonode.wfp.org/" + ica_data_layer_json["objects"][i]['detail_url'] + " target='_blank'>" + ica_data_layer_json["objects"][i]['title'] + "</a></td> <td> Shape File </td> <td> <a href=https://geonode.wfp.org/geoserver/wfs?format_options=charset%3AUTF-8&typename=" + layer_name + "&outputFormat=SHAPE-ZIP&version=1.0.0&service=WFS&request=GetFeature> Download Layer </a>  </td> </tr>");
+          }
+
+          l = layers_table.toString().replace(/,/g , " ");
+
+          var ica_data_static = sessionStorage.getItem("response_static")
+          var ica_data_static_json = JSON.parse(ica_data_static);
+          var static_maps_table = [];
+          for (var i = 0; i < ica_data_static_json["objects"].length; i++) {
+            var detail_url = ica_data_static_json["objects"][i]['detail_url'].split("/");
+            var static_map_name = detail_url[detail_url.length - 1];
+            static_maps_table.push("<tr><td><a href=https://geonode.wfp.org/wfpdocs/" + static_map_name + " target='_blank'>" + ica_data_static_json["objects"][i]['title'] + "</a></td> <td> PDF </td><td> <a href=https://geonode.wfp.org/wfpdocs/" + static_map_name + "/download>  Download Static Map </a> </td> </tr>");
+          }
+          s = static_maps_table.toString().replace(/,/g , " ");
+
+
+          var ica_data_doc = sessionStorage.getItem("response_document")
+          var ica_data_doc_json = JSON.parse(ica_data_doc);
+          var documents_table = [];
+          for (var i = 0; i < ica_data_doc_json["objects"].length; i++) {
+            var detail_url = ica_data_doc_json["objects"][i]['detail_url'].split("/");
+            var doc_name = detail_url[detail_url.length - 1];
+            documents_table.push("<tr><td><a href=https://geonode.wfp.org/documents/" + doc_name + " target='_blank'>" + ica_data_doc_json["objects"][i]['title'] + "</a></td> <td> PDF </td> <td> <a href=https://geonode.wfp.org/documents/" + doc_name + "/download> Download Document </a> </td> </tr>");
+          }
+
+          d = documents_table.toString().replace(/,/g , " ");
+
+          $("#data").append(l);
+          $("#static_map").append(s);
+          $("#documents").append(d);
+        }
+
+    </script>
+    <script>
+      // change dropdown value on click
+      $(".dropdown-menu a").on( "click", function() {
+        waitingDialog.show('Searching for Data');
+
+        $(".btn:first-child").text($(this).text());
+        $(".btn:first-child").val($(this).text());
+
+        var selected_year = $(this).text();
+        var country_iso3 = sessionStorage.getItem("country_iso3");
+        get_data_by_year(selected_year, country_iso3);
+        setTimeout(function(){
+          waitingDialog.hide();
+          display_data();
+        }, 1000);
+
+
+      });
+    </script>
+    <script type="text/javascript" src="get_data_by_year.js"></script>
+    <script src="js/waitingfor.js"></script>
+  </body>
+</html>
