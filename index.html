@@ -24,16 +24,32 @@
 
     <!-- Custom styles for this template -->
     <link href="css/hta.min.css" rel="stylesheet">
+    <link href="css/about.css" rel="stylesheet">
 
     <style>
 
+    /* general */
     section {
       padding-top: 50px;
       padding-bottom: 50px;
     }
 
-    table, th, td {
-      border: 1px solid #CCC;
+    table td + td {
+      border-left:4px solid #2a93fc;
+    }
+
+    li {
+      padding-left: 50px;
+    }
+
+    /* datamaps */
+    .datamap {
+      background-color: #ebf8fd; //red
+    }
+
+    /* svg */
+    .overlay:hover{
+      opacity: 0.5;
     }
 
     </style>
@@ -62,6 +78,9 @@
               <a class="nav-link js-scroll-trigger" href="#about">Project</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#documentation">Documentation</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
             </li>
           </ul>
@@ -83,7 +102,7 @@
 
     <div class="col-lg-12" style="margin-top:81px; padding-top:25px">
       <h1 class="page-header" align="center"> Integrated Context Analysis - ICA </h1><hr>
-      <p align="center"><i> Natural Shocks Risk, Drought Risk, Livelihood Zones, Land Degradation</i></p>
+      <p class="text-muted" align="center"><i> Welcome to ICA project page</i></p>
     </div>
 
     <!-- Project -->
@@ -115,21 +134,137 @@
     <!-- Request -->
     <section id="about">
       <div class="container">
+
         <div class="row">
-          <div class="col-lg-12 text-center">
+          <div class="col-md-12 text-center">
             <h2 class="section-heading">ICA Project</h2>
             <hr>
-            <h3 class="section-subheading text-muted">Natural Shocks Risk, Drought Risk, Livelihood Zones, Land Degradation</h3>
+            <h3 class="section-subheading text-muted">Introduction to the ICA Project</h3>
           </div>
         </div>
 
-        <div class="row text-center">
+        <div class="row">
           <div class="col-md-12" style="padding-bottom: 20px;">
             <!-- <h4 class="service-heading">Project Description</h4> -->
-            <p>ICA (Integrated Context Analysis) is one of the coolest projects ever. You want land degradation? We have it. You want livelihood analysis? We make it. You want Schock analysis? Shocking but we do that as well. 40 Countries since 2013 have implemented ICA. More than 10 indicators. </p>
+            <h3> What is the ICA? </h3>
+            <p>
+              The Integrated Context Analysis (ICA) is an analytical process that contributes to identify and discuss the most appropriate programmatic strategies in specific geographical areas – including resilience building, disaster risk reduction, social protection and emergency preparedness – for the most vulnerable and food insecure populations.
+             </p>
           </div>
         </div>
 
+
+
+        <div class="row">
+          <div class="col-md-12">
+            <svg viewBox="-40 0 1000 230">
+              <g>
+                <defs>
+                  <linearGradient id="grad1" cx="50%" cy="50%" r="50%" fx="50%" fy="50%" gradientTransform="rotate(90)">
+                    <stop offset="0%" style="stop-color:#FF7F50;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#FF8C00;stop-opacity:0" />
+                  </linearGradient>
+                </defs>
+                <ellipse cx="125" cy="115" rx="135" ry="115" fill="url(#grad1)" stroke="#FF8C00" stroke-width="0.2" />
+                 <text x="65" y="85" font-family="Verdana" font-size="18">Food Security:</text>
+                 <text x="70" y="105" font-family="Verdana" font-size="15">5+ years of </text>
+                 <text x="70" y="120" font-family="Verdana" font-size="15">recurrences of</text>
+                 <text x="70" y="135" font-family="Verdana" font-size="15">food insecurity</text>
+              </g>
+
+              <g>
+                <defs>
+                  <linearGradient id="grad2" cx="50%" cy="50%" r="50%" fx="50%" fy="50%" gradientTransform="rotate(90)">
+                    <stop offset="20%" style="stop-color:#008B8B;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#E0FFFF;stop-opacity:0.4" />
+                  </linearGradient>
+                </defs>
+                <ellipse cx="345" cy="115" rx="135" ry="115" fill="url(#grad2)" stroke="#E0FFFF" stroke-width="0.2" />
+                <text x="255" y="85" font-family="Verdana" font-size="18">Exposure to shocks:</text>
+                <text x="275" y="105" font-family="Verdana" font-size="15">30+ years of </text>
+                <text x="275" y="120" font-family="Verdana" font-size="15">floods, dropughts</text>
+                <text x="275" y="135" font-family="Verdana" font-size="15">& cyclones</text>
+              </g>
+
+              <g>
+                <defs>
+                  <linearGradient id="grad3" cx="50%" cy="50%" r="50%" fx="50%" fy="50%" gradientTransform="rotate(90)">
+                    <stop offset="0%" style="stop-color:#FFA500;stop-opacity:1" />
+                    <stop offset="50%" style="stop-color:#F0E68C;stop-opacity:0.5" />
+                    <stop offset="100%" style="stop-color:#ADFF2F;stop-opacity:0" />
+                  </linearGradient>
+                </defs>
+                <ellipse cx="565" cy="115" rx="135" ry="115" fill="url(#grad3)" stroke="#FFA500" stroke-width="0.2"/>
+                <text x="475" y="85" font-family="Verdana" font-size="18">Aggravating factors:</text>
+                <text x="495" y="105" font-family="Verdana" font-size="15">land, </text>
+                <text x="495" y="120" font-family="Verdana" font-size="15">degradation,</text>
+                <text x="495" y="135" font-family="Verdana" font-size="15">nutrition status</text>
+              </g>
+
+              <g>
+                <defs>
+                  <linearGradient id="grad4" cx="50%" cy="50%" r="50%" fx="50%" fy="50%" gradientTransform="rotate(90)">
+                    <stop offset="0%" style="stop-color:#F0FFF0;stop-opacity:1" />
+                    <stop offset="50%" style="stop-color:#6B8E23;stop-opacity:0.5" />
+                    <stop offset="100%" style="stop-color:#556B2F;stop-opacity:0" />
+                  </linearGradient>
+                </defs>
+                <ellipse cx="785" cy="115" rx="135" ry="115" fill="url(#grad4)" stroke="#556B2F" stroke-width="0.2" />
+                <text x="695" y="85" font-family="Verdana" font-size="18">Additional Information:</text>
+                <text x="715" y="105" font-family="Verdana" font-size="15">livelihood zones, </text>
+                <text x="715" y="120" font-family="Verdana" font-size="15">population,</text>
+                <text x="715" y="135" font-family="Verdana" font-size="15">density</text>
+
+              </g>
+            </svg>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12" style="padding-top: 30px; padding-bottom: 30px;">
+            <p>
+              Historical trend analyses of food security and natural shocks are combined to identify areas of convergence, and aggravating factors – such as land degradation – are overlaid on top of them to further inform programming.
+             </p>
+             <p>
+               The ICA also includes other layers – nutrition, seasonality, livelihood, food insecure population estimates – that provide a set of lenses used to pinpoint the geographical areas where further in-depth analyses are needed.
+             </p>
+          </div>
+        </div>
+
+        <div w3-include-html="html/svg.html"></div>
+
+        <div class="row">
+          <div class="col-md-12" style="padding-top: 25px;">
+            <h3> Who carries out the ICA? </h3>
+            <p>
+              The ICA is a joint effort that brings together different subjects and information within WFP:
+             </p>
+             <li> Vulnerability Analysis and Mapping (VAM) conducts trend analyses on food security, nutrition and market information using VAM and other partner data – such as the Integrated Food Security Phase Classification (IPC) – assessment and monitoring systems in order to triangulate the information and understand the variations. </li>
+             <li> GIS Unit in the Emergency Preparedness Branch (OSEP) uses remote sensing and Geographic Information Systems to model risk based on environmental features and levels of land degradation, population densities and livelihood zones. </li>
+             <li> The Direct Implementation Programme Service (OSZP) guide the interpretation of these datasets through a programmatic lens and select areas of strategic and programmatic focus in consultation with partners and stakeholders.</li>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12" style="padding-top: 25px;">
+            <h3> Why should countries run an ICA? </h3>
+            <p>
+              Used within the broader Three-Pronged Approach (3PA), an ICA helps to identify priority areas where to conduct Seasonal Livelihood Programming (SLP), consultations to identify area-specific multi-sectorial programmes with government and partners, which in turn set the foundations for targeted joint efforts with communities and partners to plan and implement programmes through Community-Based Participatory Planning (CBPP).
+             </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12" style="padding-top: 25px;">
+            <h3> When and where was ICA performed?</h3>
+            <p>
+              Since 2013, the ICA was performed in over 30 countries, with several countries running updates of the analysis according to changes in the methodology and/or availability of new data.
+             </p>
+          </div>
+        </div>
+
+
+        <!--
         <div class="row">
             <div class="col-md-4">
               <div class="card text-white bg-primary o-hidden h-100">
@@ -139,14 +274,14 @@
                   </div>
                   <div class="mr-5" style="padding-top:25px; margin-left:26%;"><h3>42 Countries </h3></div>
                 </div>
-                <!--
+
                 <a class="card-footer text-white clearfix small z-1" href="#">
                   <span class="float-left"> <h6> View Details </h6></span>
                   <span class="float-right">
                     <i class="fa fa-angle-right"></i>
                   </span>
                 </a>
-              -->
+
               </div>
             </div>
 
@@ -171,11 +306,93 @@
                 </div>
               </div>
             </div>
+        </div>
+        -->
+      </div>
+    </section>
+
+    <!-- Documentation -->
+    <section id="documentation">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading">Documentation</h2>
+          <hr>
+          <h3 class="section-subheading text-muted">Section with information and documents regarding ICA Project</h3>
+        </div>
+      </div>
+
+      <div class="row text-center">
+
+        <div class="col-md-12" style="padding-bottom: 20px;">
+          <div class="container">
+
+            <div class="caption-container">
+              <p id="caption"></p>
+            </div>
 
 
+            <div class="row">
+              <div class="col-md-2">
+                <img class="demo cursor" src="img/ica_brochure.png" style="width:100%; border:solid 1px black;" onclick="currentSlide(1)" alt="ICA Brochure">
+              </div>
+              <div class="col-md-2">
+                <img class="demo cursor" src="img/ica_brochure.png" style="width:100%; border:solid 1px black;" onclick="currentSlide(2)" alt="ICA Guidance Manual">
+              </div>
+              <div class="col-md-2">
+                <img class="demo cursor" src="img/ica_brochure.png" style="width:100%; border:solid 1px black;" onclick="currentSlide(3)" alt="ICA Guidance & Conflicts Manual">
+              </div>
+              <div class="col-md-2">
+                <img class="demo cursor" src="img/ica_brochure.png" style="width:100%; border:solid 1px black;" onclick="currentSlide(4)" alt="ICA Programme Recommendations">
+              </div>
+              <div class="col-md-2">
+                <img class="demo cursor" src="img/ica_brochure.png" style="width:100%; border:solid 1px black;" onclick="currentSlide(5)" alt="ICA Technical Template">
+              </div>
+              <div class="col-md-2">
+                <img class="demo cursor" src="img/ica_brochure.png" style="width:100%; border:solid 1px black;" onclick="currentSlide(6)" alt="ICA Food Security Analysis">
+              </div>
+            </div>
+
+            <div class="mySlides">
+              <hr style=" border-top: 1px solid #2a93fc;">
+              <p>General Information regarding the ICA Project. Introduction to the aims of ICA.</p>
+              <a class="btn btn-primary btn-l text-uppercase js-scroll-trigger" href="#" target="_blank" style="border-color:#fed136;">Download</a>
+            </div>
+
+            <div class="mySlides">
+              <hr style=" border-top: 1px solid #2a93fc;">
+              <p>Detailed information regarding ICA Project. Why do the ICA? When to do the ICA? How to do the ICA? How to use the ICA to design better programmes? How to do ICA Analysis? </p>
+              <a class="btn btn-primary btn-l text-uppercase js-scroll-trigger" href="https://geonode.wfp.org/documents/7627/download" target="_blank" style="border-color:#fed136;">Download</a>
+            </div>
+
+            <div class="mySlides">
+              <hr style=" border-top: 1px solid #2a93fc;">
+              <p>Detailed information regarding ICA Project. Why do the ICA? When to do the ICA? How to do the ICA? How to use the ICA to design better programmes? How to do ICA Analysis? </p>
+              <a class="btn btn-primary btn-l text-uppercase js-scroll-trigger" href="https://geonode.wfp.org/documents/7628/download" target="_blank" style="border-color:#fed136;">Download</a>
+            </div>
+
+            <div class="mySlides">
+              <hr style=" border-top: 1px solid #2a93fc;">
+              <p>ICA Programme Recommendations </p>
+              <a class="btn btn-primary btn-l text-uppercase js-scroll-trigger" href="https://geonode.wfp.org/documents/7629/download" target="_blank" style="border-color:#fed136;">Download</a>
+            </div>
+
+            <div class="mySlides">
+              <hr style=" border-top: 1px solid #2a93fc;">
+              <p>ICA Technical Template </p>
+              <a class="btn btn-primary btn-l text-uppercase js-scroll-trigger" href="https://geonode.wfp.org/documents/7630/download" target="_blank" style="border-color:#fed136;">Download</a>
+            </div>
+
+            <div class="mySlides">
+              <hr style=" border-top: 1px solid #2a93fc;">
+              <p>Food Security Analysis </p>
+              <a class="btn btn-primary btn-l text-uppercase js-scroll-trigger" href="https://geonode.wfp.org/documents/7631/download" target="_blank" style="border-color:#fed136;">Download</a>
+            </div>
+
+          </div>
         </div>
       </div>
     </section>
+
 
     <!-- Contact -->
     <section id="contact">
@@ -272,6 +489,12 @@
     <script src="/json/datamaps.world.min.js"></script>
     <script type="text/javascript" src="get_data_by_year.js"></script>
 
+    <script type="text/javascript" src="js/w3.js"></script>
+
+    <script>
+      w3.includeHTML();
+    </script>
+
     <script>
 
     function display_map(data, label_name, label_color){
@@ -283,20 +506,18 @@
             borderColor: '#444',
             borderWidth: 0.5,
             popupTemplate: function (geo, data) {
-              $("#table").remove();
+              //$("#table").remove();
               //$("#short_description").append( "<p id='table'>" + data.name + "</p>" );
               //$("#short_description").append( "<table id='table' class='table table-sm table-inverse' style='position:absolute;'><thead><tr><th>Country</th><th>Number of Indicators</th><th>Last Update</th></tr></thead><tbody><tr><td>" + data.adm0_name + "</td><td>" + data.indicators + "</td><td>" + data.last_update + "</td></tr></tbody></table>" );
               //return ["<div class='hoverinfo'><strong>" + geo.properties.name + "</strong></div>"]
 
               //return ["<div class='hoverinfo'><table id='table' class='table table-sm table-inverse' style='margin-top: 12px'><thead><tr><th>Country</th><th>Number of Indicators</th><th>Last Update</th></tr></thead><tbody><tr><td>" + data.adm0_name + "</td><td>" + data.indicators + "</td><td>" + data.last_update + "</td></tr></tbody></table></div>"]
 
-              return ['<div class="hoverinfo"><strong>' +  data.adm0_name + '</strong>',
-              '<br/>Name: ' +  data.adm0_name + '',
-              '<br/>Indicators: ' +  data.indicators + '',
-              '<br/>Last update: ' +  data.last_update + '',
+              return ['<div class="hoverinfo"><strong>' +  data.country + '</strong>',
+              '<br/>Country Code: ' +  data.id + '',
+              '<br/>Latest ICA: ' +  data.latest_ica_completed + '',
+              '<br/>Previous ICA: ' +  data.previous_ica + '',
               '</div>'].join('');
-
-
 
               // under this line no code
             }
@@ -318,15 +539,24 @@
 
               var localData = map.options.data[geography.id]
               if (localData && localData.id) {
-                country_iso3 = localData.id;
-                sessionStorage['country_iso3'] = country_iso3;
+                var country_iso3 = localData.id;
+                sessionStorage['country_iso3'] = country_iso3
+                sessionStorage['regional_office'] = localData.region;
+                sessionStorage['country_name'] = localData.country;
+                sessionStorage['latest_ica_completed'] = localData.latest_ica_completed;
+                sessionStorage['methodology'] = localData.methodology_latest_ica;
+                sessionStorage['previous_ica'] = localData.previous_ica;
+                sessionStorage['methodology_previous'] = localData.methodology_old_ica;
                 waitingDialog.show('Preparing Data');
 
                 var currentTime = new Date();
-                var current_year = currentTime.getFullYear();
-                get_data_by_year(current_year, country_iso3);
-                //var last_year = localData.last_update;
-                //get_data_by_year(last_year, country_iso3);
+
+                //var current_year = currentTime.getFullYear();
+                //get_data_by_year(current_year, country_iso3);
+
+                var last_year = localData.latest_ica_completed;
+                get_data_by_year(last_year, country_iso3);
+
                 setTimeout(function(){
                   window.open("http://ica.local.com/country.html");
                   waitingDialog.hide();
@@ -359,7 +589,7 @@
 
     // execute function
     data_url = 'json/ica_finalized.csv'
-    //data_url = 'http://ica.local.com/json/world_test_1.csv'
+    data_url = 'http://ica.local.com/json/ICA_Table_for_DK.csv'
     display_map(data_url, 'Finalized', '#00FF00');
 
 
@@ -411,6 +641,7 @@
 
     <!-- Custom scripts for this template -->
     <script src="js/hta.min.js"></script>
+    <script src="js/slideshow.js"></script>
 
   </body>
 </html>

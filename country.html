@@ -85,6 +85,13 @@
         </div>
         -->
 
+        <div class="row" >
+          <div class="col-lg-12" id="general_info">
+            
+          </div>
+        </div>
+        </br></br>
+
         <div class="row" style="float:right;">
           <div class="dropdown">
             <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" style="float:right; margin-right:15px;">
@@ -214,7 +221,13 @@
     <!-- Plugin JavaScript -->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
+    <script>
+      $(function() {
+        $( "#general_info" ).append( "<table id='table' class='table table-sm table-inverse table-hover table-striped'><thead><tr><th>Country</th><th>Regional Office</th><th>Last complete ICA</th><th>Methodology</th><th>Previous ICA</th><th>Methodology</th></tr></thead><tbody><tr><td>" + sessionStorage.getItem("country_name") + " (" + sessionStorage.getItem("country_iso3") + ")</td><td>" + sessionStorage.getItem("regional_office") + "</td><td>" + sessionStorage.getItem("latest_ica_completed") + "</td><td>" + sessionStorage.getItem("methodology") + "</td><td>" + sessionStorage.getItem("previous_ica") + "</td><td>" + sessionStorage.getItem("methodology_previous") + "</td></tr></tbody></table>" );
+      });
 
+
+    </script>
     <script>
 
         // on page load populate the dropdown menu with years
@@ -231,7 +244,6 @@
 
         // function to create the table with the data based on year
         function display_data() {
-          //alert("entered")
           $("#data").empty();
           $("#static_map").empty();
           $("#documents").empty();
