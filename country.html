@@ -16,14 +16,14 @@
 
 
     <!-- Custom fonts for this template -->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 
     <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
-
+    <link href="css/hta.min.css" rel="stylesheet">
 
     <style>
 
@@ -43,6 +43,27 @@
       padding: 8px;
     }
 
+    /* svg */
+    .svg_style {
+      font-family: Verdana;
+      font-weight: bold;
+      font-size: 20px;
+      fill: white;
+    }
+
+    .svg_style_number{
+      font-size: 30px;
+    }
+
+    .overlay:hover{
+      opacity: 0.5;
+    }
+
+    /* general info table */
+    .general_info {
+      color: #55ABBD;
+    }
+
     </style>
 
   </head>
@@ -54,11 +75,11 @@
       <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <a class="navbar-brand" href="#" style="background-image:url('/img/wfp_logo_72_white.png'); background-position-x: 15px; height: 65px; background-repeat: no-repeat;  color:white; margin-top:5px; font-size:32px; padding-left: 85px; font-family: Helvetica Neue,Helvetica,Arial,sans-serif;"><strong>WFP </strong> ICA</a>
+            <a class="navbar-brand" href="#" style="background-image:url('/img/wfp_logo_72_white.png'); background-position-x: 15px; height: 65px; background-repeat: no-repeat;  color:white; margin-top:5px; font-size:32px; padding-left: 85px; font-family: Helvetica Neue,Helvetica,Arial,sans-serif;"><strong>WFP </strong> Integrated Context Analysis</a>
         </div>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
-          <i class="fa fa-bars"></i>
+          <i class="fas fa-bars"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav text-uppercase ml-auto">
@@ -86,15 +107,70 @@
         -->
 
         <div class="row" >
-          <div class="col-lg-12" id="general_info">
-            
+          <div class="col-lg-12" id="country">
           </div>
         </div>
         </br></br>
 
+        <div class="row" >
+          <div class="col-lg-12" id="general_info">
+          </div>
+        </div>
+        </br></br>
+
+        <div class="row" >
+
+          <div class="col-12" id="year_selected"></div>
+
+        </div>
+        <!-- svg with counters about the layers/static maps/documents -->
+
+        <div class="row" >
+          <div class="col-12">
+
+            <svg viewBox="-40 0 1000 230">
+
+              <g>
+                <defs>
+                  <linearGradient id="grad1" cx="50%" cy="50%" r="50%" fx="50%" fy="50%" gradientTransform="rotate(90)">
+                    <stop offset="0%" style="stop-color:#FF7F50;stop-opacity:1" />
+                  </linearGradient>
+                </defs>
+                <ellipse class="overlay" cx="125" cy="115" rx="85" ry="85" fill="url(#grad1)" stroke="#FF8C00" stroke-width="0.2" />
+                <text class="overlay svg_style" x="85" y="105" >Layers</text>
+                <text class="overlay svg_style svg_style_number count" id="layer_counter" x="95" y="155">  </text>
+
+              </g>
+
+              <g>
+                <defs >
+                  <linearGradient id="grad2" cx="50%" cy="50%" r="50%" fx="50%" fy="50%" gradientTransform="rotate(90)">
+                    <stop offset="20%" style="stop-color:#008B8B;stop-opacity:1" />
+                  </linearGradient>
+                </defs>
+                <ellipse class="overlay" cx="475" cy="115" rx="85" ry="85" fill="url(#grad2)" stroke="#E0FFFF" stroke-width="0.2" />
+                <text class="overlay svg_style" x="410" y="105">Static Maps</text>
+                <text class="overlay svg_style svg_style_number count" id="static_counter" x="450" y="155">  </text>
+              </g>
+
+              <g>
+                <defs>
+                  <linearGradient id="grad3" cx="50%" cy="50%" r="50%" fx="50%" fy="50%" gradientTransform="rotate(90)">
+                    <stop offset="0%" style="stop-color:#FFA500;stop-opacity:1" />
+                  </linearGradient>
+                </defs>
+                <ellipse class="overlay" cx="825" cy="115" rx="85" ry="85" fill="url(#grad3)" stroke="#FFA500" stroke-width="0.2"/>
+                <text class="overlay svg_style" x="758" y="105">Documents</text>
+                <text class="overlay svg_style svg_style_number count" id="doc_counter" x="812" y="155"> </text>
+              </g>
+            </svg>
+          </div>
+        </div>
+
+
         <div class="row" style="float:right;">
           <div class="dropdown">
-            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" style="float:right; margin-right:15px;">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" data-toggle="tooltip" title="Select the ICA year to filter data." style="float:right; margin-right:15px;">
               ICA Year
             </button>
             <div class="dropdown-menu year"></div>
@@ -105,111 +181,86 @@
         <!-- Nav pills -->
         <ul class="nav nav-pills" role="tablist">
           <li class="nav-item">
-            <a class="nav-table nav-link active" data-toggle="pill" href="#layers_tab">Layers</a>
+            <a class="nav-table nav-link active" data-toggle="pill" href="#documents_tab" style="width:160px"><i class="fas fa-file">&nbsp;&nbsp;</i> Documents </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-table nav-link active" data-toggle="pill" href="#documents_tab" style="margin-left:10px; width:45px" id="get_doc_all"><i class="fas fa-download" data-toggle="tooltip" title="Download all documents" >&nbsp;&nbsp;</i> </a>
           </li>
         </ul>
 
         <!-- Tab panes -->
         <div class="tab-content" >
-          <div id="layers_tab" class="container tab-pane active"><br>
-            <table class="table table-hover">
-              <thead>
-                <tr>
-                  <th>Title</th>
-                  <th>Format</th>
-                  <th>Download</th>
-                </tr>
-              </thead>
-              <tbody id="data">
-              </tbody>
-            </table>
+          <div id="documents_tab" class="container tab-pane active"><br>
+            <table class="table table-hover" id="documents"></table>
           </div>
         </div>
         </br>
         <!-- Nav pills -->
         <ul class="nav nav-pills" role="tablist">
           <li class="nav-item">
-            <a class="nav-table nav-link active" data-toggle="pill" href="#static_tab">Static Maps</a>
+            <a class="nav-table nav-link active" data-toggle="pill" href="#layers_tab" style="width:160px"><i class="fas fa-align-justify">&nbsp;&nbsp;</i>Layers</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-table nav-link active" data-toggle="pill" href="#layers_tab" style="margin-left:10px; width:45px" id="get_layers_all"><i class="fas fa-download" data-toggle="tooltip" title="Download all layers" >&nbsp;&nbsp;</i> </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-table nav-link active" data-toggle="pill" href="#layers_tab" style="margin-left:10px; width:45px" id="access_map"><i class="fas fa-globe" data-toggle="tooltip" title="Access interactive map" >&nbsp;&nbsp;</i> </a>
+          </li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content" >
+          <div id="layers_tab" class="container tab-pane active"><br>
+            <table class="table table-hover" id="data"></table>
+          </div>
+        </div>
+        </br>
+        <!-- Nav pills -->
+        <ul class="nav nav-pills" role="tablist">
+          <li class="nav-item">
+            <a class="nav-table nav-link active" data-toggle="pill" href="#static_tab" style="width:160px"><i class="far fa-map">&nbsp;&nbsp;</i> Static Maps</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-table nav-link active" data-toggle="pill" href="#static_tab" style="margin-left:10px; width:45px" id="get_static_all"><i class="fas fa-download" data-toggle="tooltip" title="Download all static maps" >&nbsp;&nbsp;</i> </a>
           </li>
         </ul>
 
         <!-- Tab panes -->
         <div class="tab-content" >
           <div id="static_tab" class="container tab-pane active"><br>
-            <table class="table table-hover">
-              <thead>
-                <tr>
-                  <th>Title</th>
-                  <th>Format</th>
-                  <th>Download</th>
-                </tr>
-              </thead>
-              <tbody id="static_map">
-              </tbody>
-            </table>
+            <table class="table table-hover" id="static_map"></table>
           </div>
         </div>
 
       </br>
-      <!-- Nav pills -->
-      <ul class="nav nav-pills" role="tablist">
-        <li class="nav-item">
-          <a class="nav-table nav-link active" data-toggle="pill" href="#documents_tab">Documents</a>
-        </li>
-      </ul>
 
-      <!-- Tab panes -->
-      <div class="tab-content" >
-        <div id="documents_tab" class="container tab-pane active"><br>
-          <table class="table table-hover">
-            <thead>
-              <tr>
-                <th>Title</th>
-                <th>Format</th>
-                <th>Download</th>
-              </tr>
-            </thead>
-            <tbody id="documents">
-            </tbody>
-          </table>
-        </div>
       </div>
 
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading">Contact Details</h2>
+            <address style="color:white;">
+              WFP Emergency Preparedness and Support Response Division<br>
+              World Food Programme (HQ)<br>
+              Via Cesare Giulio Viola, 68,<br>
+              00148 Roma<br>
+              Italy
+            </address>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+
+          </div>
+        </div>
       </div>
     </section>
 
-
-    <!-- Footer -->
-    <footer>
-      <div class="container">
-        <div class="row">
-          <!--
-          <div class="col-md-4">
-            <span class="copyright">Copyright &copy; 2017</span>
-          </div>
-          <div class="col-md-4">
-            <!--
-            <ul class="list-inline social-buttons">
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fa fa-twitter"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fa fa-facebook"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fa fa-linkedin"></i>
-                </a>
-              </li>
-            </ul>
-          </div>-->
-        </div>
-      </div>
-    </footer>
 
 
     <!-- Bootstrap core JavaScript -->
@@ -223,10 +274,15 @@
 
     <script>
       $(function() {
-        $( "#general_info" ).append( "<table id='table' class='table table-sm table-inverse table-hover table-striped'><thead><tr><th>Country</th><th>Regional Office</th><th>Last complete ICA</th><th>Methodology</th><th>Previous ICA</th><th>Methodology</th></tr></thead><tbody><tr><td>" + sessionStorage.getItem("country_name") + " (" + sessionStorage.getItem("country_iso3") + ")</td><td>" + sessionStorage.getItem("regional_office") + "</td><td>" + sessionStorage.getItem("latest_ica_completed") + "</td><td>" + sessionStorage.getItem("methodology") + "</td><td>" + sessionStorage.getItem("previous_ica") + "</td><td>" + sessionStorage.getItem("methodology_previous") + "</td></tr></tbody></table>" );
+        $( "#general_info" ).append( "<table id='table' class='table table-sm table-inverse table-hover table-striped'><thead class='general_info'><tr><th>Country</th><th>Regional Office</th><th>Last complete ICA</th><th>Methodology</th><th>Previous ICA</th><th>Methodology</th></tr></thead><tbody><tr><td>" + sessionStorage.getItem("country_name") + " (" + sessionStorage.getItem("country_iso3") + ")</td><td>" + sessionStorage.getItem("regional_office") + "</td><td>" + sessionStorage.getItem("latest_ica_completed") + "</td><td>" + sessionStorage.getItem("methodology") + "</td><td>" + sessionStorage.getItem("previous_ica") + "</td><td>" + sessionStorage.getItem("methodology_previous") + "</td></tr></tbody></table>" );
+
+        $( "#country" ).append( "<h2>" + sessionStorage.getItem("country_name") +"</h2>" );
+        $( "#ica_year" ).append( "<h2>" + sessionStorage.getItem("latest_ica_completed") +"</h2>" );
+        $( "#year_selected" ).append( "<p class='general_info' style='height:100%; border-left: 3px solid #2a93fc; margin-right:10px;' > &nbsp;" +  sessionStorage.getItem("latest_ica_completed") + "</p>" );
+
+
+
       });
-
-
     </script>
     <script>
 
@@ -240,7 +296,10 @@
         }
 
 
-        display_data();
+        urls = display_data();
+        setTimeout(function(){
+          data_counter();
+        }, 200);
 
         // function to create the table with the data based on year
         function display_data() {
@@ -248,64 +307,180 @@
           $("#static_map").empty();
           $("#documents").empty();
 
+          // layers
           var ica_data_layer = sessionStorage.getItem("response_layer");
           var ica_data_layer_json = JSON.parse(ica_data_layer);
           var layers_table = [];
-          for (var i = 0; i < ica_data_layer_json["objects"].length; i++) {
-            var workspace_layer_name = ica_data_layer_json["objects"][i]['detail_url'].split("/");
-            var layer_name = workspace_layer_name[workspace_layer_name.length - 1];
-            layers_table.push("<tr><td><a href=https://geonode.wfp.org/" + ica_data_layer_json["objects"][i]['detail_url'] + " target='_blank'>" + ica_data_layer_json["objects"][i]['title'] + "</a></td> <td> Shape File </td> <td> <a href=https://geonode.wfp.org/geoserver/wfs?format_options=charset%3AUTF-8&typename=" + layer_name + "&outputFormat=SHAPE-ZIP&version=1.0.0&service=WFS&request=GetFeature> Download Layer </a>  </td> </tr>");
+          var layers_ulrs = [];
+          if (ica_data_layer_json["objects"].length > 0){
+            layers_table.push("<thead><tr><th>Title</th><th>Format</th><th>Download</th></tr></thead><tbody >")
+            for (var i = 0; i < ica_data_layer_json["objects"].length; i++) {
+              var workspace_layer_name = ica_data_layer_json["objects"][i]['detail_url'].split("/");
+              var layer_name = workspace_layer_name[workspace_layer_name.length - 1];
+              layers_table.push("<tr><td><a href=https://geonode.wfp.org/" + ica_data_layer_json["objects"][i]['detail_url'] + " target='_blank'>" + ica_data_layer_json["objects"][i]['title'] + "</a></td> <td> Shape File </td> <td> <a href=https://geonode.wfp.org/geoserver/wfs?format_options=charset%3AUTF-8&typename=" + layer_name + "&outputFormat=SHAPE-ZIP&version=1.0.0&service=WFS&request=GetFeature> Download Layer </a>  </td> </tr>");
+
+              layers_ulrs.push("https://geonode.wfp.org/geoserver/wfs?format_options=charset%3AUTF-8&typename=" + layer_name + "&outputFormat=SHAPE-ZIP&version=1.0.0&service=WFS&request=GetFeature");
+            }
+            layers_table.push("</tbody>");
+            l = layers_table.toString().replace(/,/g , " ");
+          } else {
+            l = "<i> There are no layers for this ICA year. </i>"
           }
 
-          l = layers_table.toString().replace(/,/g , " ");
-
+          // static maps
           var ica_data_static = sessionStorage.getItem("response_static")
           var ica_data_static_json = JSON.parse(ica_data_static);
           var static_maps_table = [];
-          for (var i = 0; i < ica_data_static_json["objects"].length; i++) {
-            var detail_url = ica_data_static_json["objects"][i]['detail_url'].split("/");
-            var static_map_name = detail_url[detail_url.length - 2]; // based on the order of values in the detail_url array
-            static_maps_table.push("<tr><td><a href=https://geonode.wfp.org/wfpdocs/" + static_map_name + " target='_blank'>" + ica_data_static_json["objects"][i]['title'] + "</a></td> <td> PDF </td><td> <a href=https://geonode.wfp.org/wfpdocs/" + static_map_name + "/download>  Download Static Map </a> </td> </tr>");
+          var static_maps_ulrs = [];
+          if (ica_data_static_json["objects"].length > 0){
+            static_maps_table.push("<thead><tr><th>Title</th><th>Format</th><th>Download</th></tr></thead><tbody >")
+            for (var i = 0; i < ica_data_static_json["objects"].length; i++) {
+              var detail_url = ica_data_static_json["objects"][i]['detail_url'].split("/");
+              var static_map_name = detail_url[detail_url.length - 2]; // based on the order of values in the detail_url array
+              static_maps_table.push("<tr><td><a href=https://geonode.wfp.org/wfpdocs/" + static_map_name + " target='_blank'>" + ica_data_static_json["objects"][i]['title'] + "</a></td> <td> PDF </td><td> <a href=https://geonode.wfp.org/wfpdocs/" + static_map_name + "/download>  Download Static Map </a> </td> </tr>");
+
+              static_maps_ulrs.push("https://geonode.wfp.org/wfpdocs/" + static_map_name + "/download");
+            }
+            static_maps_table.push("</tbody>");
+            s = static_maps_table.toString().replace(/,/g , " ");
+          } else {
+            s = "<i> There are no static maps for this ICA year. </i>"
           }
-          s = static_maps_table.toString().replace(/,/g , " ");
 
-
+          // documents
           var ica_data_doc = sessionStorage.getItem("response_document")
           var ica_data_doc_json = JSON.parse(ica_data_doc);
           var documents_table = [];
-          for (var i = 0; i < ica_data_doc_json["objects"].length; i++) {
-            var detail_url = ica_data_doc_json["objects"][i]['detail_url'].split("/");
-            var doc_name = detail_url[detail_url.length - 1];
-            documents_table.push("<tr><td><a href=https://geonode.wfp.org/documents/" + doc_name + " target='_blank'>" + ica_data_doc_json["objects"][i]['title'] + "</a></td> <td> PDF </td> <td> <a href=https://geonode.wfp.org/documents/" + doc_name + "/download> Download Document </a> </td> </tr>");
-          }
+          var doc_ulrs = [];
+          if (ica_data_doc_json["objects"].length > 0){
+            documents_table.push("<thead><tr><th>Title</th><th>Format</th><th>Download</th></tr></thead><tbody >")
+            for (var i = 0; i < ica_data_doc_json["objects"].length; i++) {
+              var detail_url = ica_data_doc_json["objects"][i]['detail_url'].split("/");
+              var doc_name = detail_url[detail_url.length - 1];
+              documents_table.push("<tr><td><a href=https://geonode.wfp.org/documents/" + doc_name + " target='_blank'>" + ica_data_doc_json["objects"][i]['title'] + "</a></td> <td> PDF </td> <td> <a href=https://geonode.wfp.org/documents/" + doc_name + "/download> Download Document </a> </td> </tr>");
 
-          d = documents_table.toString().replace(/,/g , " ");
+            doc_ulrs.push("https://geonode.wfp.org/documents/" + doc_name + "/download");
+            }
+            documents_table.push("</tbody>");
+            d = documents_table.toString().replace(/,/g , " ");
+          } else {
+            d = "<i> There are no documents for this ICA year. </i>"
+          }
 
           $("#data").append(l);
           $("#static_map").append(s);
           $("#documents").append(d);
-        }
+
+          var urls = [layers_ulrs, static_maps_ulrs, doc_ulrs];
+          return urls;
+        };
+
 
     </script>
+
     <script>
-      // change dropdown value on click
+      // download urls
+      $(function() {
+        // docs
+        $("#get_doc_all").on( "click", function(e) {
+          for (var i = 0; i < urls[2].length; i++) {
+            e.preventDefault();
+            window.open(urls[2][i], '_blank');
+          }
+        });
+        //static maps
+        $("#get_static_all").on( "click", function(e) {
+          for (var i = 0; i < urls[1].length; i++) {
+            e.preventDefault();
+            window.open(urls[1][i], '_blank');
+          }
+        });
+
+        // download interactive map
+        $("#get_layers_all").on( "click", function(e) {
+          var ica_data_map = sessionStorage.getItem("response_map");
+          var ica_data_map_json = JSON.parse(ica_data_map);
+          if (ica_data_map_json["objects"].length > 0){
+            // uncomment if there are many maps for a year
+            //for (var i = 0; i < ica_data_map_json["objects"].length; i++) {
+              var ica_data_map = ica_data_map_json["objects"][0]['detail_url'];
+              var ica_map_url = "https://geonode.wfp.org/" + ica_data_map + "/download";
+              e.preventDefault();
+              window.open(ica_map_url, '_blank');
+            //}
+          }
+        });
+
+        // access interactive map
+        $("#access_map").on( "click", function(e) {
+          var ica_data_map = sessionStorage.getItem("response_map");
+          var ica_data_map_json = JSON.parse(ica_data_map);
+          if (ica_data_map_json["objects"].length > 0){
+            var ica_data_map = ica_data_map_json["objects"][0]['detail_url'];
+            var ica_map_url = "https://geonode.wfp.org/" + ica_data_map;
+            e.preventDefault();
+            window.open(ica_map_url, '_blank');
+          }
+        });
+
+      });
+
+
+
+    </script>
+
+    <script>
+
       $(".dropdown-menu a").on( "click", function() {
         waitingDialog.show('Searching for Data');
-
-        $(".btn:first-child").text($(this).text());
+        // change dropdown value on click
+        $(".btn:first-child").text("ICA, " + $(this).text());
         $(".btn:first-child").val($(this).text());
 
         var selected_year = $(this).text();
+
+        // change selected year
+        $( "#year_selected" ).empty().append( "<p class='general_info'  style='height:100%; border-left: 3px solid #2a93fc; margin-right:10px;' > &nbsp;" +  selected_year + "</p>" );
+
+        setTimeout(function(){
+          data_counter();
+        }, 1000);
+
         var country_iso3 = sessionStorage.getItem("country_iso3");
         get_data_by_year(selected_year, country_iso3);
         setTimeout(function(){
           waitingDialog.hide();
-          display_data();
+          urls = display_data();
         }, 1000);
-
-
       });
     </script>
+
+    <script>
+
+    function data_counter() {
+      $(function() {
+        // counter of layers/staticmaps and documents
+        var total_count_static = parseInt(JSON.parse(sessionStorage.getItem("response_static"))["meta"]["total_count"]);
+        var total_count_doc = parseInt(JSON.parse(sessionStorage.getItem("response_document"))["meta"]["total_count"]);
+        var total_count_layers = parseInt(JSON.parse(sessionStorage.getItem("response_layer"))["meta"]["total_count"]);
+        $("#doc_counter").text(total_count_doc);
+        $("#layer_counter").text(total_count_layers);
+        $("#static_counter").text(total_count_static);
+
+        $('.count').each(function () {
+          var $this = $(this);
+          jQuery({ Counter: 0 }).animate({ Counter: $this.text() }, {
+            duration: 1000,
+            easing: 'swing',
+            step: function () {
+              $this.text(Math.ceil(this.Counter));
+            }
+          });
+        });
+      });
+    }
+    </script>
+
     <script type="text/javascript" src="get_data_by_year.js"></script>
     <script src="js/waitingfor.js"></script>
   </body>

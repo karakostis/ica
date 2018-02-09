@@ -16,7 +16,7 @@
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom fonts for this template -->
-    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
@@ -36,14 +36,6 @@
 
     table td + td {
       border-left:4px solid #2a93fc;
-    }
-
-    i {
-      cursor: pointer;
-    }
-
-    i {
-      display:inline-block; /* chrome-fix */
     }
 
     /*
@@ -77,7 +69,7 @@
         </div>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
-          <i class="fas fa-bars"></i>
+          <i class="fa fa-bars"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav text-uppercase ml-auto">
@@ -110,28 +102,33 @@
     </header>
     -->
 
-
+    <div class="col-lg-12" style="margin-top:81px; padding-top:25px">
+      <h1 class="page-header" align="center"> Integrated Context Analysis - ICA </h1><hr>
+      <!-- <p class="text-muted" align="center"><i> Welcome to ICA project page</i></p> -->
+    </div>
 
     <!-- Project -->
-    <section id="services" style="background: #F8F8F8;">
-
+    <section id="services">
       <div class="container">
-        <div class="col-lg-12" style="margin-top:71px; padding-top:20px;">
-          <h1 class="page-header" align="center"> Integrated Context Analysis - ICA </h1><hr>
-          <!-- <p class="text-muted" align="center"><i> Welcome to ICA project page</i></p> -->
-        </div>
         <!-- the area with the buttons -->
+        <div class="row">
+          <div class="col-lg-12 text-center" id="buttons">
+            <button type="button" class="btn btn-primary ica_status ica_finalized">Finalized</button>
+            <!-- <button type="button" class="btn btn-primary ica_status ica_ongoing">Ongoing</button> -->
+            <button type="button" class="btn btn-primary ica_status updating">Updating</button>
+            <!-- <button type="button" class="btn btn-primary ica_status planned">Planned for 2018</button> -->
+          </div>
+        </div></br>
         <div class="row text-center" style="border:1px solid black;">
           <div id="container" class="col-md-12" style="width:780px; height:500px; padding-left:0px;">
           </div>
         </div>
         </br>
+        <!-- the area with the short description on hover
         <div class="row">
-          <div class="col-lg-12 text-center" id="buttons">
-            <button type="button" class="btn btn-primary ica_status updating" style="float:right;">Updating</button>
-            <button type="button" class="btn btn-primary ica_status ica_finalized" style="margin-right:10px; float:right;">Finalized</button>
-          </div>
-        </div></br>
+          <div class="col-lg-12 text-center" id="short_description"> </div>
+        </div>
+        -->
 
       </div>
     </section>
@@ -268,60 +265,136 @@
           </div>
         </div>
 
+
+        <!--
+        <div class="row">
+            <div class="col-md-4">
+              <div class="card text-white bg-primary o-hidden h-100">
+                <div class="card-body">
+                  <div class="card-body-icon">
+                    <i class="fa fa-globe" style="margin-left:50%;font-size: 30px;height: 30px;vertical-align:middle;"></i>
+                  </div>
+                  <div class="mr-5" style="padding-top:25px; margin-left:26%;"><h3>42 Countries </h3></div>
+                </div>
+
+                <a class="card-footer text-white clearfix small z-1" href="#">
+                  <span class="float-left"> <h6> View Details </h6></span>
+                  <span class="float-right">
+                    <i class="fa fa-angle-right"></i>
+                  </span>
+                </a>
+
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="card text-white bg-primary o-hidden h-100">
+                <div class="card-body">
+                  <div class="card-body-icon">
+                    <i class="fa fa-tachometer " style="margin-left:50%;font-size: 30px;height: 30px;vertical-align:middle;"></i>
+                  </div>
+                  <div class="mr-5" style="padding-top:25px; margin-left:26%;"><h3> 10 Indicators </h3></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="card text-white bg-primary o-hidden h-100">
+                <div class="card-body">
+                  <div class="card-body-icon">
+                    <i class="fa fa-history" style="margin-left:50%;font-size: 30px;height: 30px;vertical-align:middle;"></i>
+                  </div>
+                  <div class="mr-5" style="padding-top:25px; margin-left:26%;"><h3>Since 2013 </h3></div>
+                </div>
+              </div>
+            </div>
+        </div>
+        -->
       </div>
     </section>
 
     <!-- Documentation -->
-    <section id="documentation" style="background: #F8F8F8;">
-      <div class="container">
+    <section id="documentation">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading">Documentation</h2>
+          <hr>
+          <h3 class="section-subheading text-muted">Section with information and documents regarding ICA Project</h3>
+        </div>
+      </div>
 
-        <div class="row">
-          <div class="col-md-6 text-center">
-            <h2 class="section-heading">Documents</h2>
-            <hr>
-            <h3 class="section-subheading text-muted">Deep dive in ICA</h3>
-          </div>
+      <div class="row text-center">
 
-          <div class="col-md-6 text-center">
-            <h2 class="section-heading">Templates</h2>
-            <hr>
-            <h3 class="section-subheading text-muted">What you need to start ICA</h3>
+        <div class="col-md-12" style="padding-bottom: 20px;">
+          <div class="container">
+
+            <div class="caption-container">
+              <p id="caption"></p>
+            </div>
+
+
+            <div class="row">
+              <div class="col-md-2">
+                <img class="demo cursor" src="img/ica_brochure.png" style="width:100%; border:solid 1px black;" onclick="currentSlide(1)" alt="ICA Brochure">
+              </div>
+              <div class="col-md-2">
+                <img class="demo cursor" src="img/ica_brochure.png" style="width:100%; border:solid 1px black;" onclick="currentSlide(2)" alt="ICA Guidance Manual">
+              </div>
+              <div class="col-md-2">
+                <img class="demo cursor" src="img/ica_brochure.png" style="width:100%; border:solid 1px black;" onclick="currentSlide(3)" alt="ICA Guidance & Conflicts Manual">
+              </div>
+              <div class="col-md-2">
+                <img class="demo cursor" src="img/ica_brochure.png" style="width:100%; border:solid 1px black;" onclick="currentSlide(4)" alt="ICA Programme Recommendations">
+              </div>
+              <div class="col-md-2">
+                <img class="demo cursor" src="img/ica_brochure.png" style="width:100%; border:solid 1px black;" onclick="currentSlide(5)" alt="ICA Technical Template">
+              </div>
+              <div class="col-md-2">
+                <img class="demo cursor" src="img/ica_brochure.png" style="width:100%; border:solid 1px black;" onclick="currentSlide(6)" alt="ICA Food Security Analysis">
+              </div>
+            </div>
+
+            <div class="mySlides">
+              <hr style=" border-top: 1px solid #2a93fc;">
+              <p>General Information regarding the ICA Project. Introduction to the aims of ICA.</p>
+              <a class="btn btn-primary btn-l text-uppercase js-scroll-trigger" href="#" target="_blank" style="border-color:#fed136;">Download</a>
+            </div>
+
+            <div class="mySlides">
+              <hr style=" border-top: 1px solid #2a93fc;">
+              <p>Detailed information regarding ICA Project. Why do the ICA? When to do the ICA? How to do the ICA? How to use the ICA to design better programmes? How to do ICA Analysis? </p>
+              <a class="btn btn-primary btn-l text-uppercase js-scroll-trigger" href="https://geonode.wfp.org/documents/7627/download" target="_blank" style="border-color:#fed136;">Download</a>
+            </div>
+
+            <div class="mySlides">
+              <hr style=" border-top: 1px solid #2a93fc;">
+              <p>Detailed information regarding ICA Project. Why do the ICA? When to do the ICA? How to do the ICA? How to use the ICA to design better programmes? How to do ICA Analysis? </p>
+              <a class="btn btn-primary btn-l text-uppercase js-scroll-trigger" href="https://geonode.wfp.org/documents/7628/download" target="_blank" style="border-color:#fed136;">Download</a>
+            </div>
+
+            <div class="mySlides">
+              <hr style=" border-top: 1px solid #2a93fc;">
+              <p>ICA Programme Recommendations </p>
+              <a class="btn btn-primary btn-l text-uppercase js-scroll-trigger" href="https://geonode.wfp.org/documents/7629/download" target="_blank" style="border-color:#fed136;">Download</a>
+            </div>
+
+            <div class="mySlides">
+              <hr style=" border-top: 1px solid #2a93fc;">
+              <p>ICA Technical Template </p>
+              <a class="btn btn-primary btn-l text-uppercase js-scroll-trigger" href="https://geonode.wfp.org/documents/7630/download" target="_blank" style="border-color:#fed136;">Download</a>
+            </div>
+
+            <div class="mySlides">
+              <hr style=" border-top: 1px solid #2a93fc;">
+              <p>Food Security Analysis </p>
+              <a class="btn btn-primary btn-l text-uppercase js-scroll-trigger" href="https://geonode.wfp.org/documents/7631/download" target="_blank" style="border-color:#fed136;">Download</a>
+            </div>
+
           </div>
         </div>
-
-        <div class="row">
-          <div class="col-md-6 text-center">
-            <div class="list-group">
-              <a class="list-group-item list-group-item-action list-group-item-success" style="text-align:left" name="ica_brochure">ICA Brochure<i class="fas fa-download get_doc" style="float:right;"></i> <i class="fas fa-info-circle get_info" style="float:right; margin-right:10px;" data-toggle="tooltip" data-placement="left" title="General Information regarding the ICA Project. Introduction to the aims of ICA."></i></a>
-
-              <a class="list-group-item list-group-item-action list-group-item-success active" style="text-align:left"  name="ica_guidance_manual">ICA Guidance Manual<i class="fas fa-download get_doc" style="float:right;"></i> <i class="fas fa-info-circle get_info" style="float:right; margin-right:10px;"  data-toggle="tooltip" data-placement="left" title="Detailed information regarding ICA Project. Why do the ICA? When to do the ICA? How to do the ICA?"></i></a>
-
-              <a class="list-group-item list-group-item-action list-group-item-info" style="text-align:left" name="ica_guidance_conflicts_manual">ICA Guidance & Conflicts Manual<i class="fas fa-download get_doc" style="float:right;"></i> <i class="fas fa-info-circle get_info" style="float:right; margin-right:10px;" data-toggle="tooltip" data-placement="left" title="Detailed information regarding ICA Project. Why do the ICA? When to do the ICA? How to do the ICA?"></i></a>
-
-              <a class="list-group-item list-group-item-action list-group-item-warning" style="text-align:left" name="ica_programme_recommendations">ICA Programme Recommendations<i class="fas fa-download get_doc" style="float:right;"></i> <i class="fas fa-info-circle get_info" style="float:right; margin-right:10px;" data-toggle="tooltip" data-placement="left" title="Detailed information regarding ICA Project. Why do the ICA? When to do the ICA? How to do the ICA?"></i></a>
-
-              <a class="list-group-item list-group-item-action list-group-item-danger" style="text-align:left" name="ica_technical_template">ICA Technical Template<i class="fas fa-download get_doc" style="float:right;"></i> <i class="fas fa-info-circle get_info" style="float:right; margin-right:10px;"  data-toggle="tooltip" data-placement="left" title="ICA Programme Recommendations", "ica_technical_template": "ICA Technical Template"></i></a>
-
-              <a class="list-group-item list-group-item-action list-group-item-light" style="text-align:left" name="ica_food_security_analysis">ICA Food Security Analysis<i class="fas fa-download get_doc" style="float:right;"></i> <i class="fas fa-info-circle get_info" style="float:right; margin-right:10px;"  data-toggle="tooltip" data-placement="left" title="Food Security Analysis"></i></a>
-            </div>
-          </div>
-
-          <div class="col-md-6 text-center">
-            <div class="list-group">
-              <a class="list-group-item list-group-item-action list-group-item-success" style="text-align:left">ICA Brochure<i class="fas fa-download get_doc" style="float:right;"></i> <i class="fas fa-info-circle" style="float:right; margin-right:10px;"></i></a>
-              <a class="list-group-item list-group-item-action list-group-item-success active" style="text-align:left">ICA Guidance Manual<i class="fas fa-download" style="float:right;"></i> <i class="fas fa-info-circle" style="float:right; margin-right:10px;"></i></a>
-              <a class="list-group-item list-group-item-action list-group-item-info" style="text-align:left">ICA Guidance & Conflicts Manual<i class="fas fa-download" style="float:right;"></i> <i class="fas fa-info-circle" style="float:right; margin-right:10px;"></i></a>
-              <a class="list-group-item list-group-item-action list-group-item-warning" style="text-align:left">ICA Programme Recommendations<i class="fas fa-download" style="float:right;"></i> <i class="fas fa-info-circle" style="float:right; margin-right:10px;"></i></a>
-              <a class="list-group-item list-group-item-action list-group-item-danger" style="text-align:left">ICA Technical Template<i class="fas fa-download" style="float:right;"></i> <i class="fas fa-info-circle" style="float:right; margin-right:10px;"></i></a>
-              <a class="list-group-item list-group-item-action list-group-item-light" style="text-align:left">ICA Food Security Analysis<i class="fas fa-download" style="float:right;"></i> <i class="fas fa-info-circle" style="float:right; margin-right:10px;"></i></a>
-            </div>
-          </div>
-
-
-        </div>
-
       </div>
     </section>
+
 
     <!-- Contact -->
     <section id="contact">
@@ -553,28 +626,6 @@
           }
         });
       });
-
-      // download documents
-      $(function() {
-
-        var documents_list = {"ica_brochure": "https://geonode.wfp.org/documents/7626/download", "ica_guidance_manual": "https://geonode.wfp.org/documents/7627/download", "ica_guidance_conflicts_manual": "https://geonode.wfp.org/documents/7628/download", "ica_programme_recommendations": "https://geonode.wfp.org/documents/7629/download", "ica_technical_template": "https://geonode.wfp.org/documents/7630/download", "ica_food_security_analysis": "https://geonode.wfp.org/documents/7631/download"};
-
-
-        $( ".get_doc" ).on( "click", function(e) {
-          var selected_doc = $(this).parent().attr('name');
-          e.preventDefault();
-          window.location.href = documents_list[selected_doc];
-
-        });
-
-      });
-
-      // document description, tooltip
-      $(function() {
-        $('[data-toggle="tooltip"]').tooltip();
-      });
-
-
     </script>
 
 
@@ -582,8 +633,10 @@
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
     <script src="js/waitingfor.js"></script>
 
+
     <!-- Custom scripts for this template -->
-    <script src="js/hta.min.js"></script>
+
+    <script src="js/slideshow.js"></script>
 
   </body>
 </html>
