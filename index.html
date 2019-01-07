@@ -17,16 +17,21 @@
 
     <!-- Custom fonts for this template -->
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
 
     <!-- Custom styles for this template -->
     <link href="css/hta.min.css" rel="stylesheet">
     <link href="css/about.css" rel="stylesheet">
 
     <style>
+
+    html * {
+      font-family: "lato",-apple-system,BlinkMacSystemFont,system,sans-serif;
+    }
+
+    ::selection {
+      background: #DBE6E9;
+    }
 
     /* general */
     section {
@@ -62,6 +67,10 @@
       opacity: 0.5;
     }
 
+    .select2-container {
+      float: right;
+    }
+
     </style>
 
   </head>
@@ -73,7 +82,7 @@
       <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <a class="navbar-brand" href="#" style="background-image:url('/img/wfp_logo_72_white.png'); background-position-x: 15px; height: 65px; background-repeat: no-repeat;  color:white; margin-top:5px; font-size:32px; padding-left: 85px; font-family: Helvetica Neue,Helvetica,Arial,sans-serif;"><strong>WFP </strong> Integrated Context Analysis</a>
+            <a class="navbar-brand" href="#" style="background-image:url('/img/wfp_logo_white.png'); background-position-x: 15px; height: 65px; background-repeat: no-repeat;  color:white; margin-top:5px; font-size:32px; padding-left: 85px; font-family: Open Sans,sans-serif;"> Integrated Context Analysis</a>
         </div>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
@@ -82,10 +91,10 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav text-uppercase ml-auto">
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#services">ICA</a>
+              <a class="nav-link js-scroll-trigger" href="#services">Home Map</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#about">Project</a>
+              <a class="nav-link js-scroll-trigger" href="#about">ICA Overview</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#documentation">Documentation</a>
@@ -117,22 +126,23 @@
 
       <div class="container">
         <div class="col-lg-12" style="margin-top:71px; padding-top:20px;">
-          <h1 class="page-header" align="center"> Integrated Context Analysis - ICA </h1><hr>
+          <h1 class="page-header" align="center"> Global ICA Status </h1>
           <!-- <p class="text-muted" align="center"><i> Welcome to ICA project page</i></p> -->
         </div>
+        <hr>
+        <div class="row">
+          <div class="col-lg-12 text-center" id="counter_search">
+            <select class="js-example-basic-single" id="countries_list" style="width: 30%; float:right;">
+              <option></option>
+            </select>
+          </div>
+        </div></br>
         <!-- the area with the buttons -->
-        <div class="row text-center" style="border:1px solid black;">
+        <div class="row text-center" style="border:1px solid black; cursor:pointer;">
           <div id="container" class="col-md-12" style="width:780px; height:500px; padding-left:0px;">
           </div>
         </div>
         </br>
-        <div class="row">
-          <div class="col-lg-12 text-center" id="buttons">
-            <button type="button" class="btn btn-primary ica_status updating" style="float:right;">Updating</button>
-            <button type="button" class="btn btn-primary ica_status ica_finalized" style="margin-right:10px; float:right;">Finalized</button>
-          </div>
-        </div></br>
-
       </div>
     </section>
 
@@ -142,9 +152,9 @@
 
         <div class="row">
           <div class="col-md-12 text-center">
-            <h2 class="section-heading">ICA Project</h2>
+            <h2 class="section-heading">ICA Overview</h2>
             <hr>
-            <h3 class="section-subheading text-muted">Introduction to the ICA Project</h3>
+            <!-- <h3 class="section-subheading text-muted">Introduction to the ICA Project</h3> -->
           </div>
         </div>
 
@@ -152,14 +162,41 @@
           <div class="col-md-12" style="padding-bottom: 20px;">
             <!-- <h4 class="service-heading">Project Description</h4> -->
             <h3> What is the ICA? </h3>
+            <h5 style="margin-top:20px; margin-bottom: 20px; color:#2a93fc"> The ICA is a data-supported process to design better programmes </h5>
             <p>
-              The Integrated Context Analysis (ICA) is an analytical process that contributes to identify and discuss the most appropriate programmatic strategies in specific geographical areas – including resilience building, disaster risk reduction, social protection and emergency preparedness – for the most vulnerable and food insecure populations.
+              The ICA is a process of consultations supported by mapped-out data that produces a strategic plan describing where different combinations of programme themes are appropriate to achieve goals of reducing food insecurity and climate related shock risk.
              </p>
+
+             <p>
+               The ICA combines multi-year food security trends with natural shock risk data to highlight sub-national areas where different programme strategies make sense. Food security trend maps shows areas where safety nets can address regular food insecurity, and others where shocks make recovery more important. Climate-related natural shock risk maps show where DRR, preparedness and early warning efforts can complement food-security objectives. Atop this core foundation, mapped data on subjects including nutrition, gender, livelihoods and resilience can enrich theme-level strategic planning in which all pieces work together. The full group of ICA partners discuss these analytical results to arrive at strategic programmatic directions.
+              </p>
+
+              <p>
+                The ICA’s key tangible outputs are an ICA Programme Recommendations paper that a describes a broad strategy agreed to by partners including the government, and arrived at through a consultative process, and a supporting an ICA Technical Paper containing maps and data as above.
+               </p>
+
+               <h5 style="margin-top:20px; margin-bottom: 20px; color:#2a93fc"> The ICA is the first step of the 3PA </h5>
+
+               <p>
+                 The ICA is the first step in the Three Pronged Approach (3PA), an innovative programming approach developed by WFP in consultation with governments and partners. The aim is to strengthen the design, planning and implementation of programmes in resilience building, productive safety nets, disaster-risk reduction, and preparedness. The 3PA comprises three processes at three levels:
+                </p>
+
+                <ol>
+                  <li> <b style="color:#2a93fc"> Integrated Context Analysis (ICA) </b> at the national level. A collaborative tool used to identify the most appropriate programmatic strategies in specific geographical areas, based on areas of convergence of historical trends of food security and natural shock risk.</li>
+                  <li> <b style="color:#2a93fc"> Seasonal Livelihood Programming (SLP) </b> at the sub-national level. A consultative process that brings together communities, government, and partners to design multi-year, multi-sectorial operational plans using seasonal and gender lenses.</li>
+                  <li> <b style="color:#2a93fc"> Community-Based Participatory Planning (CBPP) </b> at the local level. A “from the bottom up” tool that ensures communities have a strong voice and lead in setting priorities. It supports multi-sectorial plans tailored to local priorities, ensuring community ownership</li>
+                </ol>
+
+                <h5 style="margin-top:20px; margin-bottom: 20px; color:#2a93fc"> The ICA is a partnership between VAM, Programme and Emergency Preparedness </h5>
+
+                <p>
+                  WFP’s VAM, Programme and Emergency Preparedness divisions have jointly developed the ICA methodology and associated products. These three divisions continue to collaborate as equal partners in supporting the ICA at Country Office level. Each is critical to ICA success; see the Who has what Role in the ICA section for details.
+                 </p>
           </div>
         </div>
 
 
-
+        <!--
         <div class="row">
           <div class="col-md-12">
             <svg viewBox="-40 0 1000 230">
@@ -224,50 +261,42 @@
             </svg>
           </div>
         </div>
-
-        <div class="row">
-          <div class="col-md-12" style="padding-top: 30px; padding-bottom: 30px;">
-            <p>
-              Historical trend analyses of food security and natural shocks are combined to identify areas of convergence, and aggravating factors – such as land degradation – are overlaid on top of them to further inform programming.
-             </p>
-             <p>
-               The ICA also includes other layers – nutrition, seasonality, livelihood, food insecure population estimates – that provide a set of lenses used to pinpoint the geographical areas where further in-depth analyses are needed.
-             </p>
-          </div>
-        </div>
+        -->
 
         <div w3-include-html="html/svg.html"></div>
 
         <div class="row">
           <div class="col-md-12" style="padding-top: 25px;">
-            <h3> Who carries out the ICA? </h3>
+            <h3> Why do the ICA? </h3>
             <p>
-              The ICA is a joint effort that brings together different subjects and information within WFP:
+              An ICA supports strategic and evidence-based programmatic discussions and analyses by multiple stakeholders at country and regional levels and is designed to assist decision-makers (e.g., WFP, Donors, Government and other partners), as well as programme staff and analysts.
              </p>
-             <li> Vulnerability Analysis and Mapping (VAM) conducts trend analyses on food security, nutrition and market information using VAM and other partner data – such as the Integrated Food Security Phase Classification (IPC) – assessment and monitoring systems in order to triangulate the information and understand the variations. </li>
-             <li> GIS Unit in the Emergency Preparedness Branch (OSEP) uses remote sensing and Geographic Information Systems to model risk based on environmental features and levels of land degradation, population densities and livelihood zones. </li>
-             <li> The Direct Implementation Programme Service (OSZP) guide the interpretation of these datasets through a programmatic lens and select areas of strategic and programmatic focus in consultation with partners and stakeholders.</li>
+
+             <p>
+               Through its use of <b style="color:#2a93fc"> historical trend analysis </b> the ICA moves away from snapshot contextual analysis and helps identify areas for medium to longer-term programme planning, helps put short-term programmes in context while contributing to longer-term programme goals and strengthens programme planning for resilience building through food assistance. In addition, the ICA process:
+              </p>
+
+              <ul>
+               <li>Provides a framework within which existing and relevant food security statements and indicators can be used;</li>
+               <li>Underlines the value of using consecutive data;</li>
+               <li>Highlights data gaps and supports discussions to address data needs;</li>
+               <li>Identifies areas where more in-depth food-security/nutrition studies should be carried out;</li>
+               <li>Informs on additional areas for in-depth GIS data collection and coverage;</li>
+               <li>Flags linkages and areas for additional in-depth and targeted analysis by partners in general, and WFP programme staff specifically to inform SLP and CBPP work and support the implementation of appropriate programme activities;</li>
+               <li>Strengthens country and regional-level capacity to carry out additional thematic GIS vulnerability and preparedness analysis by providing clean and organised GIS datasets;  </li>
+               <li>Informs and strengthens early warning, preparedness and logistics activities by helping prioritise and focus limited resources (e.g., inform ground logistic teams on best prepositioning of food or other stocks, in view of future hazards etc.).</li>
+             </ul>
           </div>
         </div>
 
         <div class="row">
           <div class="col-md-12" style="padding-top: 25px;">
-            <h3> Why should countries run an ICA? </h3>
+            <h3> How can I learn more? </h3>
             <p>
-              Used within the broader Three-Pronged Approach (3PA), an ICA helps to identify priority areas where to conduct Seasonal Livelihood Programming (SLP), consultations to identify area-specific multi-sectorial programmes with government and partners, which in turn set the foundations for targeted joint efforts with communities and partners to plan and implement programmes through Community-Based Participatory Planning (CBPP).
+              You can download brochures, PowerPoints, and guidance manuals in the ‘Guidance” section below.
              </p>
           </div>
         </div>
-
-        <div class="row">
-          <div class="col-md-12" style="padding-top: 25px;">
-            <h3> When and where was ICA performed?</h3>
-            <p>
-              Since 2013, the ICA was performed in over 30 countries, with several countries running updates of the analysis according to changes in the methodology and/or availability of new data.
-             </p>
-          </div>
-        </div>
-
       </div>
     </section>
 
@@ -277,47 +306,48 @@
 
         <div class="row">
           <div class="col-md-6 text-center">
-            <h2 class="section-heading">Documents</h2>
+            <h4 class="section-heading">ICA Guidance</h4>
             <hr>
-            <h3 class="section-subheading text-muted">Deep dive in ICA</h3>
+            <!--<h3 class="section-subheading text-muted">Deep dive in ICA</h3>-->
           </div>
 
           <div class="col-md-6 text-center">
-            <h2 class="section-heading">Templates</h2>
+            <h4 class="section-heading">ICA Templates and Materials</h4>
             <hr>
-            <h3 class="section-subheading text-muted">What you need to start ICA</h3>
+            <!-- <h3 class="section-subheading text-muted">What you need to start ICA</h3> -->
           </div>
         </div>
 
         <div class="row">
           <div class="col-md-6 text-center">
             <div class="list-group">
-              <a class="list-group-item list-group-item-action list-group-item-success" style="text-align:left" name="ica_brochure">ICA Brochure<i class="fas fa-download get_doc" style="float:right;"></i> <i class="fas fa-info-circle get_info" style="float:right; margin-right:10px;" data-toggle="tooltip" data-placement="left" title="General Information regarding the ICA Project. Introduction to the aims of ICA."></i></a>
+              <a class="list-group-item list-group-item-action list-group-item-success" style="text-align:left" name="ica_brochure_en">ICA Brochure - EN<i class="fas fa-download get_doc" style="float:right;"></i> <i class="fas fa-info-circle get_info" style="float:right; margin-right:10px;" data-toggle="tooltip" data-placement="left" title="ICA Brochure - EN"></i></a>
 
-              <a class="list-group-item list-group-item-action list-group-item-success active" style="text-align:left"  name="ica_guidance_manual">ICA Guidance Manual<i class="fas fa-download get_doc" style="float:right;"></i> <i class="fas fa-info-circle get_info" style="float:right; margin-right:10px;"  data-toggle="tooltip" data-placement="left" title="Detailed information regarding ICA Project. Why do the ICA? When to do the ICA? How to do the ICA?"></i></a>
+              <a class="list-group-item list-group-item-action list-group-item-success" style="text-align:left"  name="ica_intro_en">ICA Introduction PowerPoint - EN<i class="fas fa-download get_doc" style="float:right;"></i> <i class="fas fa-info-circle get_info" style="float:right; margin-right:10px;"  data-toggle="tooltip" data-placement="left" title="ICA Introduction PowerPoint - EN"></i></a>
 
-              <a class="list-group-item list-group-item-action list-group-item-info" style="text-align:left" name="ica_guidance_conflicts_manual">ICA Guidance & Conflicts Manual<i class="fas fa-download get_doc" style="float:right;"></i> <i class="fas fa-info-circle get_info" style="float:right; margin-right:10px;" data-toggle="tooltip" data-placement="left" title="Detailed information regarding ICA Project. Why do the ICA? When to do the ICA? How to do the ICA?"></i></a>
-
-              <a class="list-group-item list-group-item-action list-group-item-warning" style="text-align:left" name="ica_programme_recommendations">ICA Programme Recommendations<i class="fas fa-download get_doc" style="float:right;"></i> <i class="fas fa-info-circle get_info" style="float:right; margin-right:10px;" data-toggle="tooltip" data-placement="left" title="Detailed information regarding ICA Project. Why do the ICA? When to do the ICA? How to do the ICA?"></i></a>
-
-              <a class="list-group-item list-group-item-action list-group-item-danger" style="text-align:left" name="ica_technical_template">ICA Technical Template<i class="fas fa-download get_doc" style="float:right;"></i> <i class="fas fa-info-circle get_info" style="float:right; margin-right:10px;"  data-toggle="tooltip" data-placement="left" title="ICA Programme Recommendations", "ica_technical_template": "ICA Technical Template"></i></a>
-
-              <a class="list-group-item list-group-item-action list-group-item-light" style="text-align:left" name="ica_food_security_analysis">ICA Food Security Analysis<i class="fas fa-download get_doc" style="float:right;"></i> <i class="fas fa-info-circle get_info" style="float:right; margin-right:10px;"  data-toggle="tooltip" data-placement="left" title="Food Security Analysis"></i></a>
+              <a class="list-group-item list-group-item-action list-group-item-success" style="text-align:left" name="ica_guidance_manual">ICA Guidance Manual - EN<i class="fas fa-download get_doc" style="float:right;"></i> <i class="fas fa-info-circle get_info" style="float:right; margin-right:10px;" data-toggle="tooltip" data-placement="left" title="ICA Guidance Manual - EN"></i></a>
             </div>
           </div>
 
           <div class="col-md-6 text-center">
             <div class="list-group">
-              <a class="list-group-item list-group-item-action list-group-item-success" style="text-align:left">ICA Brochure<i class="fas fa-download get_doc" style="float:right;"></i> <i class="fas fa-info-circle" style="float:right; margin-right:10px;"></i></a>
-              <a class="list-group-item list-group-item-action list-group-item-success active" style="text-align:left">ICA Guidance Manual<i class="fas fa-download" style="float:right;"></i> <i class="fas fa-info-circle" style="float:right; margin-right:10px;"></i></a>
-              <a class="list-group-item list-group-item-action list-group-item-info" style="text-align:left">ICA Guidance & Conflicts Manual<i class="fas fa-download" style="float:right;"></i> <i class="fas fa-info-circle" style="float:right; margin-right:10px;"></i></a>
-              <a class="list-group-item list-group-item-action list-group-item-warning" style="text-align:left">ICA Programme Recommendations<i class="fas fa-download" style="float:right;"></i> <i class="fas fa-info-circle" style="float:right; margin-right:10px;"></i></a>
-              <a class="list-group-item list-group-item-action list-group-item-danger" style="text-align:left">ICA Technical Template<i class="fas fa-download" style="float:right;"></i> <i class="fas fa-info-circle" style="float:right; margin-right:10px;"></i></a>
-              <a class="list-group-item list-group-item-action list-group-item-light" style="text-align:left">ICA Food Security Analysis<i class="fas fa-download" style="float:right;"></i> <i class="fas fa-info-circle" style="float:right; margin-right:10px;"></i></a>
+              <a class="list-group-item list-group-item-action list-group-item-info" style="text-align:left" name="ica_concept_note_en"> ICA Concept Note Template - EN<i class="fas fa-download get_doc" style="float:right;"></i> <i class="fas fa-info-circle get_info" style="float:right; margin-right:10px;" data-toggle="tooltip" data-placement="left" title="ICA Concept Note Template - EN"></i></a>
+
+              <a class="list-group-item list-group-item-action list-group-item-info" style="text-align:left"  name="ica_tech_paper_en"> ICA Technical Paper Template - EN<i class="fas fa-download get_doc" style="float:right;"></i> <i class="fas fa-info-circle get_info" style="float:right; margin-right:10px;"  data-toggle="tooltip" data-placement="left" title="ICA Technical Paper Template - EN"></i></a>
+
+              <a class="list-group-item list-group-item-action list-group-item-info" style="text-align:left" name="ica_progr_recom_en">ICA Programme Recommendations Template - EN<i class="fas fa-download get_doc" style="float:right;"></i> <i class="fas fa-info-circle get_info" style="float:right; margin-right:10px;" data-toggle="tooltip" data-placement="left" title="ICA Programme Recommendations Template - EN"></i></a>
+
+              <a class="list-group-item list-group-item-action list-group-item-info" style="text-align:left" name="ica_food_sec_en">ICA Food Security Analysis Template - EN<i class="fas fa-download get_doc" style="float:right;"></i> <i class="fas fa-info-circle get_info" style="float:right; margin-right:10px;" data-toggle="tooltip" data-placement="left" title="ICA Food Security Analysis Template - EN"></i></a>
+
+              <a class="list-group-item list-group-item-action list-group-item-info" style="text-align:left" name="ica_consult_en">ICA Consultation Materials - EN<i class="fas fa-download get_doc" style="float:right;"></i> <i class="fas fa-info-circle get_info" style="float:right; margin-right:10px;" data-toggle="tooltip" data-placement="left" title="ICA Consultation Materials - EN"></i></a>
+
+
+              <a class="list-group-item list-group-item-action list-group-item-info" style="text-align:left" name="aic_recom_fr">AIC Recommandations Programmatiques Modele – FR<i class="fas fa-download get_doc" style="float:right;"></i> <i class="fas fa-info-circle get_info" style="float:right; margin-right:10px;" data-toggle="tooltip" data-placement="left" title="AIC Recommandations Programmatiques Modele – FR"></i></a>
+
+
+              <a class="list-group-item list-group-item-action list-group-item-info" style="text-align:left" name="aic_doc_tec_fr">AIC Document Technique Modele - FR<i class="fas fa-download get_doc" style="float:right;"></i> <i class="fas fa-info-circle get_info" style="float:right; margin-right:10px;" data-toggle="tooltip" data-placement="left" title="AIC Document Technique Modele - FR"></i></a>
             </div>
           </div>
-
-
         </div>
 
       </div>
@@ -332,9 +362,9 @@
             <address style="color:white;">
               WFP Emergency Preparedness and Support Response Division<br>
               World Food Programme (HQ)<br>
-              Via Cesare Giulio Viola, 68,<br>
-              00148 Roma<br>
-              Italy
+              Via Cesare Giulio Viola, 68, 00148 Rome, Italy <br>
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+              <a name="contact" href="#" style="color:white;">hq.gis@wfp.org</a>
             </address>
           </div>
         </div>
@@ -391,7 +421,7 @@
 
           <!-- Modal body -->
           <div class="modal-body">
-            Welcome to Integrated Context Analysis (ICA) page. Hover over the country of your interest to get a quich preview for the ICA progress there. Click on it to access all the available data. The data are seperated by year in three categories, layers, static maps (PDF) and documents.
+            Welcome to Integrated Context Analysis (ICA) page. Hover over the country of your interest to get a quick preview for the ICA progress there. Click on it to access all the available data. The data are seperated by year in three categories, layers, static maps (PDF) and documents.
           </div>
 
           <!-- Modal footer -->
@@ -417,8 +447,12 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
     <script src="/json/datamaps.world.min.js"></script>
     <script type="text/javascript" src="get_data_by_year.js"></script>
+    <script type="text/javascript" src="get_ica_info.js"></script>
 
     <script type="text/javascript" src="js/w3.js"></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/0.10.0/lodash.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 
     <script>
       w3.includeHTML();
@@ -427,6 +461,7 @@
     <script>
 
     function display_map(data, label_name, label_color){
+
       var map = new Datamap({
           element: document.getElementById('container'),
           geographyConfig: {
@@ -446,6 +481,42 @@
           },
           done: function(datamap) {
 
+            // counter of countries
+            //setTimeout(func, 500);
+            //function func() {
+              var url = 'http://ica.local.com/json/ica_info.json';
+              r = get_ica_info(url);
+            //}
+
+            $(document.body).on("change","#countries_list",function() {
+              selected_iso3 = this.value;
+              selected_country = $(this).find('option:selected').text();
+              var country_iso3 = selected_iso3;
+              sessionStorage['country_iso3'] = country_iso3;
+              sessionStorage['regional_office'] = datamap.options.data[selected_iso3]['region'];
+              sessionStorage['country_name'] = selected_country;
+              sessionStorage['latest_ica_completed'] = datamap.options.data[selected_iso3]['latest_ica_completed'];
+              sessionStorage['methodology'] = datamap.options.data[selected_iso3]['methodology_latest_ica'];
+              sessionStorage['previous_ica'] = datamap.options.data[selected_iso3]['previous_ica'];
+              sessionStorage['methodology_previous'] = datamap.options.data[selected_iso3]['methodology_old_ica'];
+              sessionStorage['ica_years'] = datamap.options.data[selected_iso3]['ica_years'];
+              waitingDialog.show('Preparing Data');
+
+              var currentTime = new Date();
+              var last_year = datamap.options.data[selected_iso3]['latest_ica_completed'];
+              var country_url = "http://ica.local.com/country.html";
+              var access_from_indx = true;
+              get_data_by_year(last_year, country_iso3, access_from_indx, country_url);
+
+              /*
+              setTimeout(function(){
+                window.open("http://ica.local.com/country.html");
+                waitingDialog.hide();
+              }, 2000);
+              */
+
+            });
+
             // zoom
             /*
             datamap.svg.call(d3.behavior.zoom().on("zoom", redraw));
@@ -456,19 +527,20 @@
               }
             }
             */
-
+            // MAP FUNCTIONALITY
             datamap.svg.selectAll('.datamaps-subunit').on('click', function(geography) {
 
               var localData = map.options.data[geography.id]
               if (localData && localData.id) {
                 var country_iso3 = localData.id;
-                sessionStorage['country_iso3'] = country_iso3
+                sessionStorage['country_iso3'] = country_iso3;
                 sessionStorage['regional_office'] = localData.region;
                 sessionStorage['country_name'] = localData.country;
                 sessionStorage['latest_ica_completed'] = localData.latest_ica_completed;
                 sessionStorage['methodology'] = localData.methodology_latest_ica;
                 sessionStorage['previous_ica'] = localData.previous_ica;
                 sessionStorage['methodology_previous'] = localData.methodology_old_ica;
+                sessionStorage['ica_years'] = localData.ica_years;
                 waitingDialog.show('Preparing Data');
 
                 var currentTime = new Date();
@@ -477,12 +549,15 @@
                 //get_data_by_year(current_year, country_iso3);
 
                 var last_year = localData.latest_ica_completed;
-                get_data_by_year(last_year, country_iso3);
-
+                var country_url = "http://ica.local.com/country.html";
+                var access_from_indx = true;
+                get_data_by_year(last_year, country_iso3, access_from_indx, country_url);
+                /*
                 setTimeout(function(){
                   window.open("http://ica.local.com/country.html");
                   waitingDialog.hide();
                 }, 2000);
+                */
               };
             });
           },
@@ -490,7 +565,8 @@
           dataType: 'csv',
           data: {},
           fills: {
-            ICA_LEGEND: label_color,
+            complete: label_color,
+            ongoing: 'green',
             //ICA_OTHER: '#dcdfdc',
             defaultFill: '#dcdfdc' //'#abdda4'
           },
@@ -501,7 +577,8 @@
         //legendTitle: "ICA Countries",
         //defaultFillName: "Whats left",
         labels: {
-           ICA_LEGEND: label_name,
+           complete: label_name,
+           ongoing: 'ICA Ongoing',
         },
       };
 
@@ -512,14 +589,14 @@
     // execute function
     data_url = 'json/ica_finalized.csv'
     data_url = 'http://ica.local.com/json/ICA_Table_for_DK.csv'
-    display_map(data_url, 'Finalized', '#DB0C0C');
+    display_map(data_url, 'ICA Finalized', '#2a93fc');
 
 
     $(".ica_status").on( "click", function() {
       $(".datamap").remove();
       $(".datamaps-legend").remove();
       if ($(this).hasClass("ica_finalized")){
-        display_map('json/ica_finalized.csv', 'Finalized', '#DB0C0C');
+        display_map(data_url, 'ICA Finalized', '#2a93fc');
       }
       //else if ($(this).hasClass("ica_ongoing")){
       //  display_map('json/ica_ongoing.csv', 'Ongoing', '#f6ec05');
@@ -557,7 +634,7 @@
       // download documents
       $(function() {
 
-        var documents_list = {"ica_brochure": "https://geonode.wfp.org/documents/7626/download", "ica_guidance_manual": "https://geonode.wfp.org/documents/7627/download", "ica_guidance_conflicts_manual": "https://geonode.wfp.org/documents/7628/download", "ica_programme_recommendations": "https://geonode.wfp.org/documents/7629/download", "ica_technical_template": "https://geonode.wfp.org/documents/7630/download", "ica_food_security_analysis": "https://geonode.wfp.org/documents/7631/download"};
+        var documents_list = {"ica_brochure_en": "https://geonode.wfp.org/documents/8426/download", "ica_intro_en": "https://geonode.wfp.org/documents/8428/download", "ica_guidance_manual": "https://geonode.wfp.org/documents/8430/download", "ica_concept_note_en": "https://geonode.wfp.org/documents/8431/download", "ica_tech_paper_en": "https://geonode.wfp.org/documents/8432/download", "ica_progr_recom_en": "https://geonode.wfp.org/documents/8433/download", "ica_food_sec_en": "https://geonode.wfp.org/documents/8434/download", "ica_consult_en": "https://geonode.wfp.org/documents/8435/download", "aic_recom_fr": "https://geonode.wfp.org/documents/8436/download", "aic_doc_tec_fr": "https://geonode.wfp.org/documents/8437/download"};
 
 
         $( ".get_doc" ).on( "click", function(e) {
@@ -573,17 +650,15 @@
       $(function() {
         $('[data-toggle="tooltip"]').tooltip();
       });
-
-
     </script>
 
 
     <!-- Plugin JavaScript -->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-    <script src="js/waitingfor.js"></script>
+    <script type="text/javascript"src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script type="text/javascript" src="js/waitingfor.js"></script>
 
     <!-- Custom scripts for this template -->
-    <script src="js/hta.min.js"></script>
+    <script type="text/javascript" src="js/hta.min.js"></script>
 
   </body>
 </html>
